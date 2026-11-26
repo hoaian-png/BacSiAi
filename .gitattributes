@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+# Preserve upstream file bytes so sources.json checksums remain valid.
+filedata/raw/** -text
+*.parquet binary

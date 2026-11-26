@@ -1,0 +1,61 @@
+{
+  "_id": "65615239ddb286a70b3d50f0",
+  "id": "tarudesu/ViHealthQA",
+  "author": "tarudesu",
+  "sha": "d90a62deedfc822a15de3f35535bb41474e4d3f4",
+  "lastModified": "2023-11-28T07:21:22.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:question-answering",
+    "language:vi",
+    "size_categories:10K<n<100K",
+    "format:csv",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "arxiv:2206.09600",
+    "region:us",
+    "medical"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tDisclaimer:\n\t\n\nThe dataset may contain personal information crawled along with the contents of various sources. Please make a filter in pre-processing data before starting your research training.\n\n\t\n\t\t\n\t\n\t\n\t\tSPBERTQA: A Two-Stage Question Answering System Based on Sentence Transformers for Medical Texts\n\t\n\nThis is the official repository for the ViHealthQA dataset from the paper SPBERTQA: A Two-Stage Question Answering System Based on Sentence Transformers for Medical Texts, which… See the full description on the dataset page: https://huggingface.co/datasets/tarudesu/ViHealthQA.",
+  "downloads": 548,
+  "likes": 17,
+  "cardData": {
+    "task_categories": [
+      "question-answering"
+    ],
+    "language": [
+      "vi"
+    ],
+    "tags": [
+      "medical"
+    ],
+    "pretty_name": "Vietnamese Healthcare Question Answering Dataset",
+    "size_categories": [
+      "10K<n<100K"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "test.csv"
+    },
+    {
+      "rfilename": "train.csv"
+    },
+    {
+      "rfilename": "val.csv"
+    }
+  ],
+  "createdAt": "2023-11-25T01:47:37.000Z",
+  "usedStorage": 232588046
+}

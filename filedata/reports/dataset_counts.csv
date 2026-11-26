@@ -1,0 +1,4 @@
+﻿dataset,normalized_records,ent_candidate_rows,with_answer,with_context,with_source_entities,contact_pattern_rows
+ViMQ,9000,907,0,0,8748,0
+ViHealthQA,10015,1096,10015,0,0,11
+ViMedAQA,44313,1533,44313,44228,0,3

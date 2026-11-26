@@ -1,0 +1,128 @@
+{
+  "sources": [
+    {
+      "dataset": "ViMQ",
+      "repository": "https://github.com/tadeephuy/ViMQ",
+      "revision": "b35341cd506f012a4d868674210c532d5a771063",
+      "metadata_url": "https://api.github.com/repos/tadeephuy/ViMQ/git/trees/main?recursive=1",
+      "downloaded_at_utc": "2026-11-26T02:56:41.362026+00:00",
+      "selection": "all upstream data splits"
+    },
+    {
+      "dataset": "ViHealthQA",
+      "repository": "https://huggingface.co/datasets/tarudesu/ViHealthQA",
+      "revision": "d90a62deedfc822a15de3f35535bb41474e4d3f4",
+      "metadata_url": "https://huggingface.co/api/datasets/tarudesu/ViHealthQA",
+      "downloaded_at_utc": "2026-11-26T02:56:41.711157+00:00",
+      "selection": "all upstream data splits"
+    },
+    {
+      "dataset": "ViMedAQA",
+      "repository": "https://huggingface.co/datasets/tmnam20/ViMedAQA",
+      "revision": "1b36d77118a7eb5a64d94be33d3b672dea45b989",
+      "metadata_url": "https://huggingface.co/api/datasets/tmnam20/ViMedAQA",
+      "downloaded_at_utc": "2026-11-26T02:56:42.077793+00:00",
+      "selection": "all configuration only; other ViMedAQA configurations are subsets"
+    }
+  ],
+  "files": [
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/README.md",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/README.md",
+      "bytes": 190,
+      "sha256": "d8e8232aa1cd526524f18f4845d55478a21b8210dac002ca150352c8bd5f6d50"
+    },
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/data/char2index.json",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/data/char2index.json",
+      "bytes": 1838,
+      "sha256": "b952e04f3a0a169bb1fe4ad7323c6cc97cfda16ceba338845d3f9651a1ea4721"
+    },
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/data/dev.json",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/data/dev.json",
+      "bytes": 353707,
+      "sha256": "b8dcc15133750cf9b237bc21397db8e214f7451c49cf7848348c401565477671"
+    },
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/data/entity_set.txt",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/data/entity_set.txt",
+      "bytes": 52,
+      "sha256": "0dbedb42fcb3208b426cc9234ba654cb57fab4bc028fa4a74c86812e9cdff85b"
+    },
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/data/test.json",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/data/test.json",
+      "bytes": 363768,
+      "sha256": "bf0954ef548cc0c086cf784b83cb4ca17af837684dfb20652b89a4a992198f05"
+    },
+    {
+      "dataset": "ViMQ",
+      "path": "raw/ViMQ/data/train.json",
+      "url": "https://raw.githubusercontent.com/tadeephuy/ViMQ/b35341cd506f012a4d868674210c532d5a771063/data/train.json",
+      "bytes": 2461408,
+      "sha256": "4f27931b08d24bbb1cc841df3c7662487a4ac2581e6df09edbc99968c51787a4"
+    },
+    {
+      "dataset": "ViHealthQA",
+      "path": "raw/ViHealthQA/README.md",
+      "url": "https://huggingface.co/datasets/tarudesu/ViHealthQA/resolve/d90a62deedfc822a15de3f35535bb41474e4d3f4/README.md",
+      "bytes": 2659,
+      "sha256": "60b446c8b0c3916e4155772c215874809d7684a363981a120c610773bf79d0a6"
+    },
+    {
+      "dataset": "ViHealthQA",
+      "path": "raw/ViHealthQA/test.csv",
+      "url": "https://huggingface.co/datasets/tarudesu/ViHealthQA/resolve/d90a62deedfc822a15de3f35535bb41474e4d3f4/test.csv",
+      "bytes": 1861635,
+      "sha256": "316245708fdc158364bc95d5a3d9aed30be178512dd1ea9979c10814f5f9ded6"
+    },
+    {
+      "dataset": "ViHealthQA",
+      "path": "raw/ViHealthQA/train.csv",
+      "url": "https://huggingface.co/datasets/tarudesu/ViHealthQA/resolve/d90a62deedfc822a15de3f35535bb41474e4d3f4/train.csv",
+      "bytes": 6287872,
+      "sha256": "fb60de543365aa387f88c987b5c94d2fffa38e978ccc8b1cb5f629a662d77fea"
+    },
+    {
+      "dataset": "ViHealthQA",
+      "path": "raw/ViHealthQA/val.csv",
+      "url": "https://huggingface.co/datasets/tarudesu/ViHealthQA/resolve/d90a62deedfc822a15de3f35535bb41474e4d3f4/val.csv",
+      "bytes": 885525,
+      "sha256": "01f252abcc950da4b2bb719e4b66afbd4e86bf2653768f8dcfe6197d5207009a"
+    },
+    {
+      "dataset": "ViMedAQA",
+      "path": "raw/ViMedAQA/README.md",
+      "url": "https://huggingface.co/datasets/tmnam20/ViMedAQA/resolve/1b36d77118a7eb5a64d94be33d3b672dea45b989/README.md",
+      "bytes": 4889,
+      "sha256": "0f0b45956cdc11cd6217c0518c4c75f35710b4b372c48c9ea21961ea2d6cc8c8"
+    },
+    {
+      "dataset": "ViMedAQA",
+      "path": "raw/ViMedAQA/all/test-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/tmnam20/ViMedAQA/resolve/1b36d77118a7eb5a64d94be33d3b672dea45b989/all/test-00000-of-00001.parquet",
+      "bytes": 1223808,
+      "sha256": "43490359f3b1e4cd4921fed1e22d9b7fd0efede9537583ef7d42bc1e02992075"
+    },
+    {
+      "dataset": "ViMedAQA",
+      "path": "raw/ViMedAQA/all/train-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/tmnam20/ViMedAQA/resolve/1b36d77118a7eb5a64d94be33d3b672dea45b989/all/train-00000-of-00001.parquet",
+      "bytes": 20611804,
+      "sha256": "6998713c61c316c7b683578fe192500fbb635a184583a68e82de100b8b69bb44"
+    },
+    {
+      "dataset": "ViMedAQA",
+      "path": "raw/ViMedAQA/all/validation-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/tmnam20/ViMedAQA/resolve/1b36d77118a7eb5a64d94be33d3b672dea45b989/all/validation-00000-of-00001.parquet",
+      "bytes": 1206501,
+      "sha256": "1d2f400420bbed9c84cd36655459c34e2f8d3bfa305e030b9a634cd77a04ef53"
+    }
+  ]
+}

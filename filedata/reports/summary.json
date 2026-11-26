@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-11-26T03:08:37.358128+00:00",
+  "total_normalized": 63328,
+  "datasets": {
+    "ViMQ": {
+      "normalized_records": 9000,
+      "source_splits": {
+        "train": 7000,
+        "validation": 1000,
+        "test": 1000
+      },
+      "ent_candidate_rows": 907,
+      "with_answer": 0,
+      "with_context": 0,
+      "with_source_entities": 8748,
+      "contact_pattern_rows": 0
+    },
+    "ViHealthQA": {
+      "normalized_records": 10015,
+      "source_splits": {
+        "train": 7009,
+        "validation": 993,
+        "test": 2013
+      },
+      "ent_candidate_rows": 1096,
+      "with_answer": 10015,
+      "with_context": 0,
+      "with_source_entities": 0,
+      "contact_pattern_rows": 11
+    },
+    "ViMedAQA": {
+      "normalized_records": 44313,
+      "source_splits": {
+        "train": 39881,
+        "validation": 2215,
+        "test": 2217
+      },
+      "ent_candidate_rows": 1533,
+      "with_answer": 44313,
+      "with_context": 44228,
+      "with_source_entities": 0,
+      "contact_pattern_rows": 3
+    }
+  },
+  "prepared_unique_questions_ent": 3130,
+  "prepared_knowledge_ent": 1814,
+  "duplicate_question_rows": 3417,
+  "exact_question_groups": 59911,
+  "document_and_question_groups": 14957,
+  "prepared_splits_suggested": {
+    "train": 2196,
+    "test": 459,
+    "validation": 475
+  },
+  "prepared_topic_suggestions": {
+    "cam_cum": 170,
+    "sot": 628,
+    "multiple_or_no_question_topic": 735,
+    "hong_amidan": 379,
+    "trieu_chung_tai": 338,
+    "ho_dom": 424,
+    "trieu_chung_mui": 279,
+    "xoang": 145,
+    "cam_lanh": 32
+  },
+  "prepared_negation_review_required": 85,
+  "gold_topic_labels_reviewed": 0,
+  "checks": {
+    "expected_source_counts": true,
+    "unique_record_ids": true,
+    "keyword_character_offsets": true,
+    "no_group_crossing_suggested_splits": true,
+    "raw_file_sha256_verified": true
+  },
+  "limitations": [
+    "Topic labels are rule suggestions, not human gold labels.",
+    "No clinical validation has been performed.",
+    "Near duplicates and paraphrases require additional review.",
+    "Suggested splits group exact normalized questions and matching source URLs; not stratified.",
+    "Contact masking is heuristic, not full anonymization.",
+    "ENT candidates include fever-only questions and may be outside the final ENT scope.",
+    "Knowledge candidates are not approved for patient-facing RAG."
+  ]
+}

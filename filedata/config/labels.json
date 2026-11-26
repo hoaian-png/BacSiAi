@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "status": "project_topic_labels_require_manual_review",
+  "labels": {
+    "ho_dom": "Câu hỏi về ho và đờm",
+    "trieu_chung_mui": "Câu hỏi về triệu chứng mũi, viêm mũi",
+    "xoang": "Câu hỏi có nhắc xoang hoặc viêm xoang",
+    "hong_amidan": "Câu hỏi về họng, amidan và thanh quản",
+    "trieu_chung_tai": "Câu hỏi về tai và thính lực",
+    "cam_lanh": "Câu hỏi có nhắc cảm lạnh hoặc cảm mạo",
+    "cam_cum": "Câu hỏi có nhắc cúm",
+    "sot": "Câu hỏi có nhắc sốt"
+  },
+  "notes": [
+    "Đây là chủ đề được nhắc đến, không phải chẩn đoán bệnh hay xác nhận triệu chứng hiện diện.",
+    "Một câu có thể có nhiều nhãn gợi ý; topic_label chỉ điền khi có đúng một chủ đề trong câu hỏi.",
+    "Không tự gán ngoài phạm vi chỉ vì không khớp từ điển.",
+    "Nhãn ý định ViMQ là một trục riêng, không chuyển thành nhãn chủ đề.",
+    "Nhãn gold_topic_label để trống đến khi người gán nhãn duyệt."
+  ]
+}

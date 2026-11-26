@@ -1,0 +1,72 @@
+variant,canonical,topic
+ho,ho,ho_dom
+ho khan,ho khan,ho_dom
+ho có đờm,ho có đờm,ho_dom
+ho đờm,ho có đờm,ho_dom
+đờm,đờm,ho_dom
+đàm,đờm,ho_dom
+đờm xanh,đờm xanh,ho_dom
+đờm vàng,đờm vàng,ho_dom
+đờm trắng,đờm trắng,ho_dom
+ho ra máu,ho ra máu,ho_dom
+ho kéo dài,ho kéo dài,ho_dom
+ho dai dẳng,ho kéo dài,ho_dom
+sổ mũi,sổ mũi,trieu_chung_mui
+chảy nước mũi,chảy nước mũi,trieu_chung_mui
+chảy mũi,chảy nước mũi,trieu_chung_mui
+nghẹt mũi,nghẹt mũi,trieu_chung_mui
+ngạt mũi,nghẹt mũi,trieu_chung_mui
+tắc mũi,nghẹt mũi,trieu_chung_mui
+viêm mũi,viêm mũi,trieu_chung_mui
+viêm mũi dị ứng,viêm mũi dị ứng,trieu_chung_mui
+hắt hơi,hắt hơi,trieu_chung_mui
+hắt xì,hắt hơi,trieu_chung_mui
+ngứa mũi,ngứa mũi,trieu_chung_mui
+dịch mũi,dịch mũi,trieu_chung_mui
+polyp mũi,polyp mũi,trieu_chung_mui
+chảy máu mũi,chảy máu mũi,trieu_chung_mui
+xoang,xoang,xoang
+viêm xoang,viêm xoang,xoang
+viêm xoan,viêm xoang,xoang
+đau họng,đau họng,hong_amidan
+viêm họng,viêm họng,hong_amidan
+rát họng,rát họng,hong_amidan
+ngứa họng,ngứa họng,hong_amidan
+amidan,amidan,hong_amidan
+a mi đan,amidan,hong_amidan
+amiđan,amidan,hong_amidan
+viêm amidan,viêm amidan,hong_amidan
+viêm amiđan,viêm amidan,hong_amidan
+viêm thanh quản,viêm thanh quản,hong_amidan
+khàn tiếng,khàn tiếng,hong_amidan
+khản tiếng,khàn tiếng,hong_amidan
+nuốt đau,nuốt đau,hong_amidan
+nuốt vướng,nuốt vướng,hong_amidan
+viêm VA,viêm VA,hong_amidan
+ù tai,ù tai,trieu_chung_tai
+đau tai,đau tai,trieu_chung_tai
+nhức tai,đau tai,trieu_chung_tai
+viêm tai,viêm tai,trieu_chung_tai
+viêm tai giữa,viêm tai giữa,trieu_chung_tai
+viêm tai ngoài,viêm tai ngoài,trieu_chung_tai
+viêm ống tai,viêm ống tai,trieu_chung_tai
+ống tai,ống tai,trieu_chung_tai
+chảy dịch tai,chảy dịch tai,trieu_chung_tai
+chảy mủ tai,chảy mủ tai,trieu_chung_tai
+ngứa tai,ngứa tai,trieu_chung_tai
+đau nhức tai,đau tai,trieu_chung_tai
+nghe kém,nghe kém,trieu_chung_tai
+giảm thính lực,giảm thính lực,trieu_chung_tai
+mất thính lực,mất thính lực,trieu_chung_tai
+điếc,điếc,trieu_chung_tai
+màng nhĩ,màng nhĩ,trieu_chung_tai
+vòi nhĩ,vòi nhĩ,trieu_chung_tai
+ráy tai,ráy tai,trieu_chung_tai
+cảm lạnh,cảm lạnh,cam_lanh
+cảm mạo,cảm lạnh,cam_lanh
+cảm cúm,cảm cúm,cam_cum
+cúm,cúm,cam_cum
+sốt,sốt,sot
+sốt cao,sốt cao,sot
+sốt nhẹ,sốt nhẹ,sot
+sốt kéo dài,sốt kéo dài,sot

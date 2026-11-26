@@ -1,0 +1,46 @@
+{
+  "validated_at_utc": "2026-11-26T05:45:52.776868+00:00",
+  "files": {
+    "normalized/ViMQ": {
+      "rows": 9000,
+      "csv_jsonl_equivalent": true,
+      "unique_ids": true
+    },
+    "normalized/ViHealthQA": {
+      "rows": 10015,
+      "csv_jsonl_equivalent": true,
+      "unique_ids": true
+    },
+    "normalized/ViMedAQA": {
+      "rows": 44313,
+      "csv_jsonl_equivalent": true,
+      "unique_ids": true
+    },
+    "prepared/questions_ent": {
+      "rows": 3130,
+      "csv_jsonl_equivalent": true,
+      "unique_ids": true
+    },
+    "prepared/knowledge_ent": {
+      "rows": 1814,
+      "csv_jsonl_equivalent": true,
+      "unique_ids": true
+    }
+  },
+  "checks": {
+    "csv_jsonl_roundtrip": true,
+    "unique_ids": true,
+    "duplicate_links": true,
+    "keyword_offsets": true,
+    "group_split_consistency": true,
+    "question_provenance": true,
+    "questions_exclude_answers": true,
+    "knowledge_unapproved": true,
+    "source_sha256": true,
+    "keyword_word_boundaries": true,
+    "negation_hint": true,
+    "medical_comparison_symbols_preserved": true,
+    "html_cleanup": true,
+    "vimq_detokenization": true
+  }
+}

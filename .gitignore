@@ -1,0 +1,21 @@
+# Python environments and installed dependencies
+.venv/
+venv/
+.data-tools/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials and machine configuration
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.pfx
+
+# Editor and OS state
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
