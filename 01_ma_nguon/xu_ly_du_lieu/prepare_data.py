@@ -16,13 +16,14 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+ROOT = PROJECT_ROOT / '02_du_lieu' / 'filedata'
 RAW = ROOT / 'raw'
 NORMALIZED = ROOT / 'normalized'
 PREPARED = ROOT / 'prepared'
-REPORTS = ROOT / 'reports'
+REPORTS = PROJECT_ROOT / '05_bao_cao' / 'kiem_tra_du_lieu'
 HEADERS = {'User-Agent': 'ENT-Research-Data/1.0'}
-sys.path.insert(0, str(ROOT.parent / '.data-tools'))
+sys.path.insert(0, str(PROJECT_ROOT / '01_ma_nguon' / '.data-tools'))
 
 
 def clean(value, segmented=False):
@@ -160,7 +161,7 @@ def read_records():
     try:
         import pyarrow.parquet as pq
     except ImportError as exc:
-        raise SystemExit('Install pyarrow==26.0.1 or use: python -m pip install --target .data-tools pyarrow==26.0.1') from exc
+        raise SystemExit('Install pyarrow==26.0.1 or use: python -m pip install --target 01_ma_nguon/.data-tools pyarrow==26.0.1') from exc
     names = {0: 'body-part', 1: 'disease', 2: 'drug', 3: 'medicine'}
     for split in ('train', 'validation', 'test'):
         for path in sorted((RAW / 'ViMedAQA/all').glob(f'{split}-*.parquet')):

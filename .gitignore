@@ -19,3 +19,8 @@ __pycache__/
 .vscode/
 Thumbs.db
 .DS_Store
+
+# Runtime logs stay local; keep the folder guide trackable.
+07_nhat_ky/chuong_trinh/*
+!07_nhat_ky/chuong_trinh/README.md
+!07_nhat_ky/chuong_trinh/.gitkeep

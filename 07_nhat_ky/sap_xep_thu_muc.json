@@ -1,0 +1,488 @@
+{
+  "date": "2026-11-27",
+  "description": "Local reorganization into 7 project-specific layers; no Git staging, commit or push",
+  "mappings": [
+    {
+      "from": "filedata/requirements-data.txt",
+      "to": "01_ma_nguon/xu_ly_du_lieu/requirements-data.txt"
+    },
+    {
+      "from": "filedata/DATA_DICTIONARY.md",
+      "to": "06_tai_lieu/TU_DIEN_DU_LIEU.md"
+    },
+    {
+      "from": "filedata/validate_data.py",
+      "to": "01_ma_nguon/xu_ly_du_lieu/validate_data.py"
+    },
+    {
+      "from": "filedata/prepare_data.py",
+      "to": "01_ma_nguon/xu_ly_du_lieu/prepare_data.py"
+    },
+    {
+      "from": "HUONG_DAN_THU_MUC.md",
+      "to": "06_tai_lieu/HUONG_DAN_THU_MUC.md"
+    },
+    {
+      "from": "Thứ tự làm việc.txt",
+      "to": "06_tai_lieu/ban_nhap/Thứ tự làm việc.txt"
+    },
+    {
+      "from": "filedata/README.md",
+      "to": "06_tai_lieu/DU_LIEU.md"
+    },
+    {
+      "from": "QUY_UOC_LUU_TRU.md",
+      "to": "06_tai_lieu/QUY_UOC_LUU_TRU.md"
+    },
+    {
+      "from": "filedata/reports",
+      "to": "05_bao_cao/kiem_tra_du_lieu"
+    },
+    {
+      "from": "baocaososanh",
+      "to": "05_bao_cao/BaoCaoSoSanh"
+    },
+    {
+      "from": "mô hình.txt",
+      "to": "06_tai_lieu/ban_nhap/mô hình.txt"
+    },
+    {
+      "from": "PROJECT.md",
+      "to": "06_tai_lieu/PROJECT.md"
+    },
+    {
+      "from": "ROADMAP.md",
+      "to": "06_tai_lieu/ROADMAP.md"
+    },
+    {
+      "from": "filedata",
+      "to": "02_du_lieu/filedata"
+    },
+    {
+      "from": "giaodien",
+      "to": "01_ma_nguon/giaodien"
+    },
+    {
+      "from": "backend",
+      "to": "01_ma_nguon/backend"
+    },
+    {
+      "from": "train",
+      "to": "01_ma_nguon/train"
+    }
+  ],
+  "files": [
+    {
+      "old_path": ".gitattributes",
+      "new_path": ".gitattributes",
+      "sha256_before": "4001bd8b383e54bedd688c66eeb2313f94c8c65dc699deb7032256fcfb211191",
+      "sha256_after": "c483dacb0b0c5ef8eec68f8a85898e60f3388a2486825732a4ba691f99e1fffc",
+      "content_preserved": false
+    },
+    {
+      "old_path": ".gitignore",
+      "new_path": ".gitignore",
+      "sha256_before": "7dba19c3add2e95ac54278847413904b4b28698260052009de22a7c3a219df92",
+      "sha256_after": "ffda887d5e1766add01f9053d9b2a793e064dd3e1fab7cb329eb376841fb5366",
+      "content_preserved": false
+    },
+    {
+      "old_path": "AGENTS.md",
+      "new_path": "AGENTS.md",
+      "sha256_before": "df3da535807b5cce3b5b8b1383978bc34afb3987b70b2910a2296fea8816fec3",
+      "sha256_after": "bad93f41ccddc889e3d1bc53943f133673c45a92bb06b301d39eb0b2fdb20bc3",
+      "content_preserved": false
+    },
+    {
+      "old_path": "HUONG_DAN_THU_MUC.md",
+      "new_path": "06_tai_lieu/HUONG_DAN_THU_MUC.md",
+      "sha256_before": "e09ce90900c06107b60931c00b9222a62026f365a0337e3e6c426b2aab97d711",
+      "sha256_after": "e5b839b6b79c13152a78dbd92370fbe0266a01ed658f66cc1ebc77eeba3f8159",
+      "content_preserved": false
+    },
+    {
+      "old_path": "mô hình.txt",
+      "new_path": "03_mo_hinh/MoHinh.md",
+      "sha256_before": "d9e66148bb8567b71c2695b96dfd3173bfaf0da9579960369de5f953ade3fdf8",
+      "sha256_after": "d9e66148bb8567b71c2695b96dfd3173bfaf0da9579960369de5f953ade3fdf8",
+      "content_preserved": true,
+      "path_after_reorganization": "06_tai_lieu/ban_nhap/mô hình.txt"
+    },
+    {
+      "old_path": "PROJECT.md",
+      "new_path": "06_tai_lieu/PROJECT.md",
+      "sha256_before": "2213be844a4a79f4c7ce9c4c7e098266e3eb12d9b6bffb1e00f4a1125840d41f",
+      "sha256_after": "45a4ce07ad3efb813b5a1111546a8648fd68172c18b2e2bca10b78df0b06ddb2",
+      "content_preserved": false
+    },
+    {
+      "old_path": "QUY_UOC_LUU_TRU.md",
+      "new_path": "06_tai_lieu/QUY_UOC_LUU_TRU.md",
+      "sha256_before": "4121e332fb344ce104b3fbdda07e43049df19ed802511113f41a46c35b41ba21",
+      "sha256_after": "1a6e1297a7a6eeba5d1f48fd902ad6a83b6740232662ab99020b79b61b78cb7e",
+      "content_preserved": false
+    },
+    {
+      "old_path": "README.md",
+      "new_path": "README.md",
+      "sha256_before": "9def94df2162937c8ba00d33f73bc4a69e641ab1b2a3a68e20131fd32e1c48b8",
+      "sha256_after": "7304305829fb192818db4a7670c09cc13a90ca6bd74c2de120032900cd244e91",
+      "content_preserved": false
+    },
+    {
+      "old_path": "ROADMAP.md",
+      "new_path": "06_tai_lieu/ROADMAP.md",
+      "sha256_before": "4b6b151ecf45151b931b330123ef004760c9f1ce780b898c548af79069e6a122",
+      "sha256_after": "ee8e9212242579b7702f65bb7ee6b9bcbd30f156ef608f861174ecec409d0293",
+      "content_preserved": false
+    },
+    {
+      "old_path": "Thứ tự làm việc.txt",
+      "new_path": "ThuTuLamViec.md",
+      "sha256_before": "7c555030e615a50066d5e6f5f35cc514580645a82690395b5ff2fe188aa873e2",
+      "sha256_after": "7c555030e615a50066d5e6f5f35cc514580645a82690395b5ff2fe188aa873e2",
+      "content_preserved": true,
+      "path_after_reorganization": "06_tai_lieu/ban_nhap/Thứ tự làm việc.txt"
+    },
+    {
+      "old_path": "backend/.gitkeep",
+      "new_path": "01_ma_nguon/backend/.gitkeep",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_preserved": true
+    },
+    {
+      "old_path": "baocaososanh/.gitkeep",
+      "new_path": "05_bao_cao/BaoCaoSoSanh/.gitkeep",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/DATA_DICTIONARY.md",
+      "new_path": "06_tai_lieu/TU_DIEN_DU_LIEU.md",
+      "sha256_before": "8e288277910bce2ba1b090d4dc075da4a65c9c1240b0ddb0eb5a13d718ef1504",
+      "sha256_after": "d9e2c02616e804661887edfa199db97bb5062b10382eaa94929f02954cf06c6f",
+      "content_preserved": false
+    },
+    {
+      "old_path": "filedata/prepare_data.py",
+      "new_path": "01_ma_nguon/xu_ly_du_lieu/prepare_data.py",
+      "sha256_before": "089902100005a929dbf0500f8a437d6a7e648d2641f698bab05bd15ebf0f3b0f",
+      "sha256_after": "81665bb88fba19948d6add8ef1fd85e9e038bb9837b828c339461e1a0f7e6e2a",
+      "content_preserved": false
+    },
+    {
+      "old_path": "filedata/README.md",
+      "new_path": "06_tai_lieu/DU_LIEU.md",
+      "sha256_before": "e825d007859b4a5128e93035d337ec665e38bc36d08e702cae982dc1b27ac720",
+      "sha256_after": "1faffe51f5d6dec36e39ddb2f5c341495fc736300bfe012ab733af68406381c9",
+      "content_preserved": false
+    },
+    {
+      "old_path": "filedata/requirements-data.txt",
+      "new_path": "01_ma_nguon/xu_ly_du_lieu/requirements-data.txt",
+      "sha256_before": "433e6e8d28ef1f913afbbc4dac2a4e1407c6a6da84f9c1aea3e3770f22619d72",
+      "sha256_after": "433e6e8d28ef1f913afbbc4dac2a4e1407c6a6da84f9c1aea3e3770f22619d72",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/sources.json",
+      "new_path": "02_du_lieu/filedata/sources.json",
+      "sha256_before": "d693cc573a8f2d0adf1c3c2d5de344c59e725755021eaac3da7e7f910b619f20",
+      "sha256_after": "d693cc573a8f2d0adf1c3c2d5de344c59e725755021eaac3da7e7f910b619f20",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/validate_data.py",
+      "new_path": "01_ma_nguon/xu_ly_du_lieu/validate_data.py",
+      "sha256_before": "ae2f03d52fa4df578e00c5fa272478c45ad8a0fcb6a15560856e98f8cb3363a6",
+      "sha256_after": "53d7dfd99a8f8ce99147797f44ae639228516d7403066968c6cea89132c0e907",
+      "content_preserved": false
+    },
+    {
+      "old_path": "filedata/config/keywords.csv",
+      "new_path": "02_du_lieu/filedata/config/keywords.csv",
+      "sha256_before": "ca3c0d81016ea820640eec9c2cde818a08f8abfac63b0ffbf7297aa7196894f4",
+      "sha256_after": "ca3c0d81016ea820640eec9c2cde818a08f8abfac63b0ffbf7297aa7196894f4",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/config/labels.json",
+      "new_path": "02_du_lieu/filedata/config/labels.json",
+      "sha256_before": "00c9fc5b5b7146491385cb5b6173ff8c72feacff9af6abbc1a356163f77d0753",
+      "sha256_after": "00c9fc5b5b7146491385cb5b6173ff8c72feacff9af6abbc1a356163f77d0753",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViHealthQA.csv",
+      "new_path": "02_du_lieu/filedata/normalized/ViHealthQA.csv",
+      "sha256_before": "43bc94b7f34c859c15dbbf49f247b57f652185fff2afc77b0ab832a607529c6e",
+      "sha256_after": "43bc94b7f34c859c15dbbf49f247b57f652185fff2afc77b0ab832a607529c6e",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViHealthQA.jsonl",
+      "new_path": "02_du_lieu/filedata/normalized/ViHealthQA.jsonl",
+      "sha256_before": "a1c4117847dbb4b6431c12862f3900e93d4c0b5976777c0f7e77591a0d66987c",
+      "sha256_after": "a1c4117847dbb4b6431c12862f3900e93d4c0b5976777c0f7e77591a0d66987c",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViMedAQA.csv",
+      "new_path": "02_du_lieu/filedata/normalized/ViMedAQA.csv",
+      "sha256_before": "afa977d41d0bee2bd3ed7c4c26e87928171bf47a6ca3c17b7e9fc22a0fdb1b00",
+      "sha256_after": "afa977d41d0bee2bd3ed7c4c26e87928171bf47a6ca3c17b7e9fc22a0fdb1b00",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViMedAQA.jsonl",
+      "new_path": "02_du_lieu/filedata/normalized/ViMedAQA.jsonl",
+      "sha256_before": "ad27eeef5a7d86da4f486f595e009b778170a17821781914ebebfd36175d4a72",
+      "sha256_after": "ad27eeef5a7d86da4f486f595e009b778170a17821781914ebebfd36175d4a72",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViMQ.csv",
+      "new_path": "02_du_lieu/filedata/normalized/ViMQ.csv",
+      "sha256_before": "9ae9a1b1f95e1f646b6f9346cd3c8d9c9ce6ede1c5a72829a892e097020a0312",
+      "sha256_after": "9ae9a1b1f95e1f646b6f9346cd3c8d9c9ce6ede1c5a72829a892e097020a0312",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/normalized/ViMQ.jsonl",
+      "new_path": "02_du_lieu/filedata/normalized/ViMQ.jsonl",
+      "sha256_before": "4f0f189d801d5f608d250e2829de7c9b9f9d8bf2c70cab08dfe77cfb704f8338",
+      "sha256_after": "4f0f189d801d5f608d250e2829de7c9b9f9d8bf2c70cab08dfe77cfb704f8338",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/prepared/knowledge_ent.csv",
+      "new_path": "02_du_lieu/filedata/prepared/knowledge_ent.csv",
+      "sha256_before": "a48d06fe5858407001986bdb54af7db3db617566abcdefbb90f1acc8f71997a3",
+      "sha256_after": "a48d06fe5858407001986bdb54af7db3db617566abcdefbb90f1acc8f71997a3",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/prepared/knowledge_ent.jsonl",
+      "new_path": "02_du_lieu/filedata/prepared/knowledge_ent.jsonl",
+      "sha256_before": "8dc105d17cbc3da0fc90e1b3cbe0078ba8e5059de68476c0e8551caf07e4c49c",
+      "sha256_after": "8dc105d17cbc3da0fc90e1b3cbe0078ba8e5059de68476c0e8551caf07e4c49c",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/prepared/questions_ent.csv",
+      "new_path": "02_du_lieu/filedata/prepared/questions_ent.csv",
+      "sha256_before": "4712fac576ad9d2a1fa94125f4adf7b2b1a74b903fe1d84fa3110e3ad7cdfa5a",
+      "sha256_after": "4712fac576ad9d2a1fa94125f4adf7b2b1a74b903fe1d84fa3110e3ad7cdfa5a",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/prepared/questions_ent.jsonl",
+      "new_path": "02_du_lieu/filedata/prepared/questions_ent.jsonl",
+      "sha256_before": "0548b9a2e4d2d241784d009d5d52e62b84353e677230bcda861ab7f18d6a4fa5",
+      "sha256_after": "0548b9a2e4d2d241784d009d5d52e62b84353e677230bcda861ab7f18d6a4fa5",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViHealthQA/README.md",
+      "new_path": "02_du_lieu/filedata/raw/ViHealthQA/README.md",
+      "sha256_before": "60b446c8b0c3916e4155772c215874809d7684a363981a120c610773bf79d0a6",
+      "sha256_after": "60b446c8b0c3916e4155772c215874809d7684a363981a120c610773bf79d0a6",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViHealthQA/repository_metadata.json",
+      "new_path": "02_du_lieu/filedata/raw/ViHealthQA/repository_metadata.json",
+      "sha256_before": "37c3aed1ab4f4b4b9509b5fbdb4a6d5afa7a65fc35f7253fb3e39aeb2044fdb0",
+      "sha256_after": "37c3aed1ab4f4b4b9509b5fbdb4a6d5afa7a65fc35f7253fb3e39aeb2044fdb0",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViHealthQA/test.csv",
+      "new_path": "02_du_lieu/filedata/raw/ViHealthQA/test.csv",
+      "sha256_before": "316245708fdc158364bc95d5a3d9aed30be178512dd1ea9979c10814f5f9ded6",
+      "sha256_after": "316245708fdc158364bc95d5a3d9aed30be178512dd1ea9979c10814f5f9ded6",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViHealthQA/train.csv",
+      "new_path": "02_du_lieu/filedata/raw/ViHealthQA/train.csv",
+      "sha256_before": "fb60de543365aa387f88c987b5c94d2fffa38e978ccc8b1cb5f629a662d77fea",
+      "sha256_after": "fb60de543365aa387f88c987b5c94d2fffa38e978ccc8b1cb5f629a662d77fea",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViHealthQA/val.csv",
+      "new_path": "02_du_lieu/filedata/raw/ViHealthQA/val.csv",
+      "sha256_before": "01f252abcc950da4b2bb719e4b66afbd4e86bf2653768f8dcfe6197d5207009a",
+      "sha256_after": "01f252abcc950da4b2bb719e4b66afbd4e86bf2653768f8dcfe6197d5207009a",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMedAQA/README.md",
+      "new_path": "02_du_lieu/filedata/raw/ViMedAQA/README.md",
+      "sha256_before": "0f0b45956cdc11cd6217c0518c4c75f35710b4b372c48c9ea21961ea2d6cc8c8",
+      "sha256_after": "0f0b45956cdc11cd6217c0518c4c75f35710b4b372c48c9ea21961ea2d6cc8c8",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMedAQA/repository_metadata.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMedAQA/repository_metadata.json",
+      "sha256_before": "0b00334e931b831abb39a5813960bef00994d411911b3783b4744e4255bfbe4c",
+      "sha256_after": "0b00334e931b831abb39a5813960bef00994d411911b3783b4744e4255bfbe4c",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMedAQA/all/test-00000-of-00001.parquet",
+      "new_path": "02_du_lieu/filedata/raw/ViMedAQA/all/test-00000-of-00001.parquet",
+      "sha256_before": "43490359f3b1e4cd4921fed1e22d9b7fd0efede9537583ef7d42bc1e02992075",
+      "sha256_after": "43490359f3b1e4cd4921fed1e22d9b7fd0efede9537583ef7d42bc1e02992075",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMedAQA/all/train-00000-of-00001.parquet",
+      "new_path": "02_du_lieu/filedata/raw/ViMedAQA/all/train-00000-of-00001.parquet",
+      "sha256_before": "6998713c61c316c7b683578fe192500fbb635a184583a68e82de100b8b69bb44",
+      "sha256_after": "6998713c61c316c7b683578fe192500fbb635a184583a68e82de100b8b69bb44",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMedAQA/all/validation-00000-of-00001.parquet",
+      "new_path": "02_du_lieu/filedata/raw/ViMedAQA/all/validation-00000-of-00001.parquet",
+      "sha256_before": "1d2f400420bbed9c84cd36655459c34e2f8d3bfa305e030b9a634cd77a04ef53",
+      "sha256_after": "1d2f400420bbed9c84cd36655459c34e2f8d3bfa305e030b9a634cd77a04ef53",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/README.md",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/README.md",
+      "sha256_before": "d8e8232aa1cd526524f18f4845d55478a21b8210dac002ca150352c8bd5f6d50",
+      "sha256_after": "d8e8232aa1cd526524f18f4845d55478a21b8210dac002ca150352c8bd5f6d50",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/repository_metadata.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/repository_metadata.json",
+      "sha256_before": "a41f00fbad95f244155a6a616266c118da7f7278248b6cff66c5e72c0d483979",
+      "sha256_after": "a41f00fbad95f244155a6a616266c118da7f7278248b6cff66c5e72c0d483979",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/data/char2index.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/data/char2index.json",
+      "sha256_before": "b952e04f3a0a169bb1fe4ad7323c6cc97cfda16ceba338845d3f9651a1ea4721",
+      "sha256_after": "b952e04f3a0a169bb1fe4ad7323c6cc97cfda16ceba338845d3f9651a1ea4721",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/data/dev.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/data/dev.json",
+      "sha256_before": "b8dcc15133750cf9b237bc21397db8e214f7451c49cf7848348c401565477671",
+      "sha256_after": "b8dcc15133750cf9b237bc21397db8e214f7451c49cf7848348c401565477671",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/data/entity_set.txt",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/data/entity_set.txt",
+      "sha256_before": "0dbedb42fcb3208b426cc9234ba654cb57fab4bc028fa4a74c86812e9cdff85b",
+      "sha256_after": "0dbedb42fcb3208b426cc9234ba654cb57fab4bc028fa4a74c86812e9cdff85b",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/data/test.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/data/test.json",
+      "sha256_before": "bf0954ef548cc0c086cf784b83cb4ca17af837684dfb20652b89a4a992198f05",
+      "sha256_after": "bf0954ef548cc0c086cf784b83cb4ca17af837684dfb20652b89a4a992198f05",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/raw/ViMQ/data/train.json",
+      "new_path": "02_du_lieu/filedata/raw/ViMQ/data/train.json",
+      "sha256_before": "4f27931b08d24bbb1cc841df3c7662487a4ac2581e6df09edbc99968c51787a4",
+      "sha256_after": "4f27931b08d24bbb1cc841df3c7662487a4ac2581e6df09edbc99968c51787a4",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/reports/dataset_counts.csv",
+      "new_path": "05_bao_cao/kiem_tra_du_lieu/dataset_counts.csv",
+      "sha256_before": "644d607587b7d74d165a3da5f6b7611772cbabaa8903f99e7efd97da0b3b7224",
+      "sha256_after": "644d607587b7d74d165a3da5f6b7611772cbabaa8903f99e7efd97da0b3b7224",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/reports/duplicates.csv",
+      "new_path": "05_bao_cao/kiem_tra_du_lieu/duplicates.csv",
+      "sha256_before": "5422fc8462a70a2bc84e99ad7706facf4cebceeeeb3603b7623e1df53d138ab1",
+      "sha256_after": "5422fc8462a70a2bc84e99ad7706facf4cebceeeeb3603b7623e1df53d138ab1",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/reports/summary.json",
+      "new_path": "05_bao_cao/kiem_tra_du_lieu/summary.json",
+      "sha256_before": "cd55eba8b89667314e32992d4470cf2280ff5a80dd20e5f26e33208b93953397",
+      "sha256_after": "cd55eba8b89667314e32992d4470cf2280ff5a80dd20e5f26e33208b93953397",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/reports/topic_counts.csv",
+      "new_path": "05_bao_cao/kiem_tra_du_lieu/topic_counts.csv",
+      "sha256_before": "2456045466d1d31b48de075953e98d371a3deb7260ce102c06f7980e32fb3d6d",
+      "sha256_after": "2456045466d1d31b48de075953e98d371a3deb7260ce102c06f7980e32fb3d6d",
+      "content_preserved": true
+    },
+    {
+      "old_path": "filedata/reports/validation.json",
+      "new_path": "05_bao_cao/kiem_tra_du_lieu/validation.json",
+      "sha256_before": "e023425676ec6ff0ef451d2ca215c0bef38230c3394c533b0c9ae39bfa187dbe",
+      "sha256_after": "2f30251dc02a41d6e664817cf0222052dee9c25110906502e4f61d97e45e8334",
+      "content_preserved": false
+    },
+    {
+      "old_path": "giaodien/.gitkeep",
+      "new_path": "01_ma_nguon/giaodien/.gitkeep",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_preserved": true
+    },
+    {
+      "old_path": "train/.gitkeep",
+      "new_path": "01_ma_nguon/train/.gitkeep",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_preserved": true
+    }
+  ],
+  "verification": {
+    "files_before": 54,
+    "files_preserved_byte_for_byte": 41,
+    "files_updated_for_paths_or_validation": [
+      ".gitattributes",
+      ".gitignore",
+      "AGENTS.md",
+      "06_tai_lieu/HUONG_DAN_THU_MUC.md",
+      "06_tai_lieu/PROJECT.md",
+      "06_tai_lieu/QUY_UOC_LUU_TRU.md",
+      "README.md",
+      "06_tai_lieu/ROADMAP.md",
+      "06_tai_lieu/TU_DIEN_DU_LIEU.md",
+      "01_ma_nguon/xu_ly_du_lieu/prepare_data.py",
+      "06_tai_lieu/DU_LIEU.md",
+      "01_ma_nguon/xu_ly_du_lieu/validate_data.py",
+      "05_bao_cao/kiem_tra_du_lieu/validation.json"
+    ],
+    "missing_files": [],
+    "unexpected_content_changes": [],
+    "broken_markdown_links": [],
+    "data_validator_passed": true,
+    "python_syntax_passed": true
+  },
+  "subsequent_updates": {
+    "date": "2026-11-27",
+    "file_renames": {
+      "06_tai_lieu/ban_nhap/mô hình.txt": "03_mo_hinh/MoHinh.md",
+      "06_tai_lieu/ban_nhap/Thứ tự làm việc.txt": "ThuTuLamViec.md"
+    },
+    "git_sync": "User explicitly requested GitHub update after local reorganization."
+  }
+}

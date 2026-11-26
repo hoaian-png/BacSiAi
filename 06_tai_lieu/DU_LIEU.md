@@ -19,44 +19,25 @@ Sau khi loại câu hỏi trùng chính xác theo văn bản chuẩn hóa: **3.1
 
 ## Mở file nào trước?
 
-1. `prepared/questions_ent.csv`: mở bằng Excel để xem câu hỏi, từ khóa và nhãn chủ đề gợi ý; điền nhãn đã duyệt vào `gold_topic_label`.
-2. `prepared/knowledge_ent.csv`: xem câu hỏi, câu trả lời hoặc đoạn tài liệu dùng làm ứng viên cho kho truy xuất.
-3. `reports/summary.json`: thống kê thực tế và kết quả kiểm tra.
-4. `config/labels.json` và `config/keywords.csv`: danh mục nhãn và từ điển từ khóa đang áp dụng.
+1. `02_du_lieu/filedata/prepared/questions_ent.csv`: mở bằng Excel để xem câu hỏi, từ khóa và nhãn chủ đề gợi ý; điền nhãn đã duyệt vào `gold_topic_label`.
+2. `02_du_lieu/filedata/prepared/knowledge_ent.csv`: xem câu hỏi, câu trả lời hoặc đoạn tài liệu dùng làm ứng viên cho kho truy xuất.
+3. `05_bao_cao/kiem_tra_du_lieu/summary.json`: thống kê thực tế và kết quả kiểm tra.
+4. `02_du_lieu/filedata/config/labels.json` và `02_du_lieu/filedata/config/keywords.csv`: danh mục nhãn và từ điển từ khóa đang áp dụng.
 
 CSV dùng UTF-8 có BOM để Excel đọc tiếng Việt. JSONL dùng UTF-8; mỗi dòng là một đối tượng JSON. Các trường danh sách trong CSV được lưu dạng chuỗi JSON, ví dụ `["ho","đờm vàng"]`; trong Python đọc bằng `json.loads()`.
 
-## Cấu trúc thư mục
+## Cấu trúc sau khi sắp xếp theo tầng
 
 ```text
-filedata/
-  README.md                     Hướng dẫn này
-  DATA_DICTIONARY.md             Giải thích từng cột và cách gán nhãn
-  sources.json                  URL tải chính xác, mã phiên bản, dung lượng, SHA-256
-  prepare_data.py               Script tải và chuẩn hóa có thể chạy lại
-  requirements-data.txt         Thư viện đọc Parquet
-  config/
-    labels.json                 8 nhãn chủ đề ban đầu
-    keywords.csv                Biến thể từ khóa, cách viết chuẩn, chủ đề
-  raw/
-    ViMQ/                       JSON gốc, nhãn thực thể, README, metadata
-    ViHealthQA/                 CSV gốc, README, metadata
-    ViMedAQA/                   Parquet cấu hình all, README, metadata
-  normalized/
-    ViMQ.csv / ViMQ.jsonl        Toàn bộ 9.000 bản ghi đã chuẩn hóa
-    ViHealthQA.csv / .jsonl      Toàn bộ 10.015 bản ghi đã chuẩn hóa
-    ViMedAQA.csv / .jsonl        Toàn bộ 44.313 bản ghi đã chuẩn hóa
-  prepared/
-    questions_ent.csv / .jsonl   Câu hỏi ứng viên đã loại trùng để duyệt nhãn
-    knowledge_ent.csv / .jsonl   Mục kiến thức ứng viên để duyệt nội dung
-  reports/
-    summary.json                Thống kê và kiểm tra toàn bộ pipeline
-    dataset_counts.csv          Thống kê theo nguồn
-    topic_counts.csv            Thống kê nhãn gợi ý
-    duplicates.csv              Danh sách bản ghi trùng câu hỏi
+01_ma_nguon/xu_ly_du_lieu/       prepare_data.py, validate_data.py, requirements-data.txt
+02_du_lieu/filedata/            raw, normalized, prepared, config, sources.json
+05_bao_cao/kiem_tra_du_lieu/     summary.json, validation.json và các bảng thống kê
+06_tai_lieu/                    DU_LIEU.md, TU_DIEN_DU_LIEU.md
 ```
 
-PyArrow là thư viện hỗ trợ đọc Parquet, không phải dữ liệu hay mô hình AI. Lần chạy hoàn thiện dùng thư viện trong thư mục tạm của Windows, không cần giữ `.data-tools` trong dự án. Khi chạy lại có thể cài vào `.data-tools` theo lệnh phía dưới hoặc dùng môi trường Python riêng.
+Các đường dẫn trong hướng dẫn chạy lệnh tính từ gốc dự án. Các giá trị `path` trong `sources.json` và `raw_location` trong bản ghi vẫn tính từ `02_du_lieu/filedata`; không thay đổi các bản ghi chỉ vì di chuyển thư mục.
+
+PyArrow là thư viện đọc Parquet. Thư viện cục bộ hiện đặt tại `01_ma_nguon/.data-tools`, được loại khỏi Git; không phải một bộ dữ liệu hay mô hình đã train.
 
 ## Nguồn dữ liệu và điều kiện sử dụng
 
@@ -117,7 +98,7 @@ PyArrow là thư viện hỗ trợ đọc Parquet, không phải dữ liệu hay
 
 Không tự gán nhãn `ngoai_pham_vi` khi không thấy từ khóa. Một câu hỏi có thể liên quan dù dùng cách diễn đạt chưa có trong từ điển. Các ứng viên chỉ có sốt cũng có thể ngoài phạm vi tai mũi họng cuối cùng, cần loại khi duyệt.
 
-Để bắt đầu gán nhãn, sao chép `prepared/questions_ent.csv` thành một file mới, chẳng hạn `questions_ent_reviewed.csv`, rồi chỉnh `gold_topic_label` và `review_status`. **Không chỉnh file sinh tự động rồi chạy lại pipeline**, vì pipeline sẽ ghi đè kết quả sinh trước đó. Giữ nhãn nguồn riêng và không biến nhãn chủ đề thành chẩn đoán.
+Để bắt đầu gán nhãn, sao chép `02_du_lieu/filedata/prepared/questions_ent.csv` thành một file mới, chẳng hạn `questions_ent_reviewed.csv`, rồi chỉnh `gold_topic_label` và `review_status`. **Không chỉnh file sinh tự động rồi chạy lại pipeline**, vì pipeline sẽ ghi đè kết quả sinh trước đó. Giữ nhãn nguồn riêng và không biến nhãn chủ đề thành chẩn đoán.
 
 ## Chia tập và tránh rò rỉ
 
@@ -141,8 +122,8 @@ Tọa độ từ khóa/thực thể trong prepared tham chiếu câu hỏi norma
 Từ thư mục gốc dự án, dùng Python 3.11 trở lên:
 
 ```powershell
-python -m pip install --target .data-tools -r filedata/requirements-data.txt
-python -X utf8 filedata/prepare_data.py --offline
+python -m pip install --target 01_ma_nguon/.data-tools -r 01_ma_nguon/xu_ly_du_lieu/requirements-data.txt
+python -X utf8 01_ma_nguon/xu_ly_du_lieu/prepare_data.py --offline
 ```
 
 Lệnh `--offline` dùng lại raw đã tải. Nếu bỏ `--offline`, script truy vấn phiên bản hiện tại của nguồn và tải lại trước khi chuẩn hóa; manifest sẽ ghi phiên bản mới. Không chạy lại khi chưa sao lưu các chỉnh sửa thủ công.
@@ -150,7 +131,7 @@ Lệnh `--offline` dùng lại raw đã tải. Nếu bỏ `--offline`, script tr
 Kiểm tra lại các file đã xuất mà không cần PyArrow:
 
 ```powershell
-python -X utf8 filedata/validate_data.py
+python -X utf8 01_ma_nguon/xu_ly_du_lieu/validate_data.py
 ```
 
-Đã kiểm tra: số lượng cả ba nguồn, ID duy nhất, SHA-256 bản gốc, tọa độ ký tự từ khóa, tính nhất quán nhóm chia tập và dữ liệu CSV khớp JSONL. Kết quả chi tiết nằm trong `reports/summary.json` và `reports/validation.json`.
+Đã kiểm tra: số lượng cả ba nguồn, ID duy nhất, SHA-256 bản gốc, tọa độ ký tự từ khóa, tính nhất quán nhóm chia tập và dữ liệu CSV khớp JSONL. Kết quả chi tiết nằm trong `05_bao_cao/kiem_tra_du_lieu/summary.json` và `05_bao_cao/kiem_tra_du_lieu/validation.json`.

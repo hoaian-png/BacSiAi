@@ -7,7 +7,7 @@ from pathlib import Path
 
 import prepare_data as pipeline
 
-ROOT = Path(__file__).resolve().parent
+ROOT = pipeline.ROOT
 
 
 def load_jsonl(path):
@@ -78,7 +78,7 @@ def main():
         'knowledge_unapproved', 'source_sha256', 'keyword_word_boundaries',
         'negation_hint', 'medical_comparison_symbols_preserved', 'html_cleanup',
         'vimq_detokenization'], True)
-    pipeline.save_json(ROOT / 'reports/validation.json', report)
+    pipeline.save_json(pipeline.REPORTS / 'validation.json', report)
     print(json.dumps(report, ensure_ascii=True, indent=2))
 
 
