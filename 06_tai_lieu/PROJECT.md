@@ -60,7 +60,7 @@ Các tham số cụ thể, epoch và batch size sẽ được chốt khi triển
           ↓
   Kiểm tra mức phù hợp và thông tin còn thiếu
           ↓
-  LLM diễn đạt nội dung tìm được, hoặc hỏi bổ sung
+  Gemini API diễn đạt nội dung tìm được, hoặc hỏi bổ sung
           ↓
 Giao diện hiển thị câu trả lời và nguồn
 ```
@@ -89,8 +89,10 @@ Không chạy cả năm mô hình trên mọi câu hỏi. Train cả năm để 
   + LLM chỉ đóng vai trò tổng hợp và diễn đạt lại nội dung đã tìm được từ kho tri thức được duyệt; không tự suy diễn nguyên nhân, chẩn đoán, lựa chọn thuốc hoặc bịa đặt kiến thức ngoài nguồn.
   + Giữ nguyên nguồn tham chiếu cho từng thông tin, giữ điều kiện áp dụng, phủ định và các điểm khác biệt so sánh.
   + Nếu các nguồn mâu thuẫn, phải nêu rõ điểm chưa thống nhất; không tự ghép thành một kết luận chắc chắn.
-- Nếu không tìm thấy nội dung phù hợp: hỏi thêm hoặc thông báo chưa có thông tin. Nếu Ollama không chạy: có thể hiển thị nội dung nguồn đã duyệt.
-- Chọn mô hình Ollama sau khi kiểm tra RAM/GPU; tên mô hình chưa được chốt.
+- **Nhà cung cấp LLM đã chọn:** Google Gemini qua Gemini API; đây là thiết kế đã chốt, chưa triển khai tích hợp hoặc gọi API. Model ID sẽ được cấu hình khi triển khai và kiểm tra khả dụng, chất lượng, độ trễ, hạn mức; chưa chốt tên phiên bản cụ thể.
+- Streamlit và backend chạy trên máy local; bước gọi Gemini cần Internet và gửi câu hỏi/ngữ cảnh cần thiết tới dịch vụ Google. Chỉ gửi phần nội dung cần cho lượt trả lời, hạn chế thông tin nhận dạng cá nhân; không tải toàn bộ dữ liệu hoặc lịch sử hội thoại lên API.
+- Python đọc khóa qua biến môi trường `GEMINI_API_KEY` hoặc secrets local được bỏ qua bởi Git; không hardcode, công bố hoặc ghi khóa vào log. Tham khảo [hướng dẫn khóa Gemini API của Google](https://ai.google.dev/gemini-api/docs/api-key).
+- Nếu không tìm thấy nội dung phù hợp: hỏi thêm hoặc thông báo chưa đủ thông tin. Nếu Gemini API lỗi, quá hạn mức, thiếu khóa hoặc mất mạng: hiển thị thông báo rõ và có thể trả nội dung nguồn đã duyệt thay vì tự sinh câu trả lời không có nguồn.
 
 ## SQLite dự kiến
 

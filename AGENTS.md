@@ -11,7 +11,9 @@ Tài liệu này hướng dẫn người phát triển và trợ lý lập trìn
 - Giữ một file giao diện chính `01_ma_nguon/giaodien/app.py` và một file xử lý chính `01_ma_nguon/backend/backend.py`; mã train được tách riêng trong `01_ma_nguon/train`.
 - SQLite là lựa chọn lưu trữ ứng dụng; chưa tạo database khi công việc chỉ yêu cầu tài liệu.
 - Năm mô hình cần train: Multinomial Naive Bayes, Logistic Regression, Linear SVM, Random Forest, PhoBERT-base-v2.
+- LLM dùng Google Gemini qua Gemini API (thiết kế đã chốt, chưa tích hợp). Model ID cấu hình riêng khi triển khai; không tự chốt phiên bản hoặc fine-tune Gemini.
 - LLM chỉ diễn đạt nội dung tìm được; không tính LLM là mô hình thứ năm và không tự triển khai fine-tune LLM.
+- Khóa Gemini API đọc ở phía Python qua biến môi trường `GEMINI_API_KEY` hoặc cấu hình secrets local; không ghi khóa vào mã nguồn, Git hoặc log.
 
 ## Làm đúng phạm vi được yêu cầu
 

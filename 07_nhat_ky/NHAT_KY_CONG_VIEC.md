@@ -67,3 +67,10 @@ Ghi chú: thư mục mô hình, thử nghiệm và kết quả mới có hướn
 - Pilot: 70 reviewed, 33 excluded, 17 needs_discussion. Đợt mở rộng: 200 câu nguồn, bản làm việc có 1 reviewed, 5 excluded, 194 pending; 26 câu thảo dược chưa duyệt.
 - Phiếu mở rộng công bố chỉ giữ câu gốc và quyết định đã xác nhận. Bản nháp AI 168 câu còn lỗi giữ trên máy. Các đề xuất pilot v1–v4 là lịch sử truy vết; bản được chấp thuận nằm trong annotations/v4_user_accepted_20261128.
 - Không công bố scratch. Chưa train, chưa triển khai web hoặc phê duyệt kho kiến thức.
+
+## 28/11/2026 — Chọn Gemini API cho LLM
+
+- Theo yêu cầu người dùng, thay lựa chọn Ollama bằng Google Gemini qua Gemini API trong README, kiến trúc, lộ trình và hướng dẫn tác nhân.
+- Giữ Streamlit/SQLite chạy local và năm mô hình phân loại; Gemini chỉ tổng hợp, diễn đạt nội dung truy xuất có nguồn.
+- Chưa chốt model ID; chưa tích hợp, gọi API, tạo khóa hoặc cài thư viện. Ghi rõ yêu cầu Internet, cấu hình khóa local và xử lý lỗi dịch vụ.
+- Chỉ đồng bộ các tài liệu liên quan lựa chọn Gemini; không đưa bộ đề xuất AI 168 câu còn lỗi lên GitHub.

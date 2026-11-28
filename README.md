@@ -1,6 +1,6 @@
 # BacSiAi — Hỏi đáp thông tin tai mũi họng
 
-Tài liệu cập nhật ngày **27/11/2026**. Dự án hướng đến ứng dụng **Streamlit chạy localhost**, kết hợp nhận diện từ khóa, mô hình phân loại câu hỏi và truy xuất kiến thức. LLM chỉ diễn đạt lại nội dung đã tìm được.
+Tài liệu cập nhật ngày **28/11/2026**. Dự án hướng đến ứng dụng **Streamlit chạy localhost**, kết hợp nhận diện từ khóa, mô hình phân loại câu hỏi và truy xuất kiến thức. LLM chỉ diễn đạt lại nội dung đã tìm được.
 
 ## Trạng thái thực tế
 
@@ -37,7 +37,9 @@ Số liệu lấy từ `05_bao_cao/kiem_tra_du_lieu/summary.json`, không phải
 | ML truyền thống | TF-IDF + Multinomial Naive Bayes, Logistic Regression, Linear SVM, Random Forest |
 | Học sâu | Fine-tune PhoBERT-base-v2 cho phân loại chủ đề |
 | Truy xuất ban đầu | TF-IDF và cosine similarity, kết hợp từ khóa/chủ đề |
-| LLM | Mô hình có sẵn qua Ollama; chọn tên mô hình sau khi kiểm tra cấu hình máy |
+| LLM | Google Gemini qua Gemini API; model ID sẽ cấu hình khi triển khai, chưa tích hợp |
+
+Giao diện vẫn chạy localhost; bước gọi Gemini API cần kết nối Internet. Đây là lựa chọn thiết kế, chưa có mã tích hợp hoặc lời gọi API thực tế.
 
 LLM không nằm trong 5 mô hình cần train. LLM chỉ sắp xếp và diễn đạt nội dung truy xuất được; lời nhắc không bảo đảm tuyệt đối rằng đầu ra đúng, nên vẫn cần kiểm thử độ bám nguồn và cơ chế quay về nội dung gốc khi cần.
 

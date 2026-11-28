@@ -6,7 +6,7 @@ Tài liệu cập nhật **28/11/2026**. Dấu `[x]` chỉ việc đã có bằn
 
 - [x] Chốt Streamlit chạy local, Python và SQLite cho ứng dụng dự kiến.
 - [x] Chốt năm mô hình: Naive Bayes, Logistic Regression, Linear SVM, Random Forest, PhoBERT-base-v2.
-- [x] Chốt LLM chỉ diễn đạt nội dung truy xuất, không train LLM ở giai đoạn đầu.
+- [x] Chốt Google Gemini qua Gemini API làm LLM diễn đạt nội dung truy xuất; chưa tích hợp và không train LLM ở giai đoạn đầu.
 - [x] Tải ba bộ dữ liệu và lưu nguồn/phiên bản/checksum.
 - [x] Chuẩn hóa 63.328 bản ghi thành CSV và JSONL.
 - [x] Tạo 3.130 câu hỏi và 1.814 mục kiến thức ứng viên sau lọc/loại trùng.
@@ -97,7 +97,8 @@ Truy xuất trả về ID, nội dung, nguồn và mức phù hợp; có luồng
   + Không giới hạn việc tìm kiếm vào một chủ đề duy nhất chỉ vì mô hình phân loại dự đoán một nhãn.
   + Tách rời bài toán phân loại train (đơn nhãn) khỏi truy xuất hỏi đáp (kết hợp linh hoạt).
 - [ ] Lưu trạng thái câu hỏi đang chờ bổ sung trong phiên.
-- [ ] Kết nối Ollama với mô hình phù hợp cấu hình máy.
+- [ ] Tích hợp Gemini API từ backend Python; cấu hình model ID riêng và đọc khóa từ `GEMINI_API_KEY` hoặc secrets local, không đưa khóa lên Git.
+- [ ] Xử lý lỗi API, timeout, hạn mức, thiếu khóa và mất mạng; giới hạn dữ liệu câu hỏi/ngữ cảnh gửi tới dịch vụ.
 - [ ] Giới hạn đầu vào LLM vào câu hỏi và nội dung được tìm thấy; LLM chỉ tổng hợp và diễn đạt lại nội dung có nguồn.
 - [ ] Kiểm thử đầu ra giữ nguồn, điều kiện áp dụng, phủ định, điểm khác biệt; không thêm chẩn đoán, nguyên nhân hoặc thuốc ngoài nội dung nguồn; nêu rõ điểm mâu thuẫn giữa các nguồn nếu có.
 - [ ] Có phương án hiển thị nội dung gốc khi LLM không hoạt động hoặc đầu ra không phù hợp.
@@ -113,7 +114,7 @@ Luồng có nội dung phù hợp, thiếu thông tin, không có nguồn, lỗi
 - [ ] Tab So sánh mô hình: hiển thị kết quả thực tế, support và ma trận nhầm lẫn.
 - [ ] Phân biệt thông tin tham khảo với chẩn đoán.
 - [ ] Không lưu nội dung hội thoại nhạy cảm vào log mặc định.
-- [ ] Có thông báo rõ khi thiếu mô hình, dữ liệu đã duyệt hoặc Ollama.
+- [ ] Có thông báo rõ khi thiếu mô hình phân loại, dữ liệu đã duyệt, khóa Gemini API hoặc không kết nối được dịch vụ.
 
 ### Điều kiện hoàn thành
 
