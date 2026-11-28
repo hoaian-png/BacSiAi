@@ -1,0 +1,26 @@
+{
+  "proposal_batch_id": "remaining_100_ai_proposals_v1",
+  "description": "De xuat AI cho 100 cau hoi con lai cua tap pilot ngoai batch 01.",
+  "total_questions": 100,
+  "generated_at": "2026-11-28",
+  "status_distribution": {
+    "excluded_proposed": 15,
+    "label_proposed": 50,
+    "needs_discussion": 35
+  },
+  "proposed_label_distribution": {
+    "trieu_chung_tai": 10,
+    "ho_dom": 6,
+    "hong_amidan": 8,
+    "xoang": 6,
+    "sot": 1,
+    "cam_lanh": 7,
+    "trieu_chung_mui": 7,
+    "cam_cum": 5
+  },
+  "needs_clarification_count": 2,
+  "checksums": {
+    "remaining_100_ai_review.jsonl": "253a455bb2a8c8d8a47965bed0905383cc57598b829384b2ac95f8edfb181b3e",
+    "remaining_100_ai_review.csv": "daed662083280395a83d2d62e4f4d59673cce4f4192352352a9b7d16be580115"
+  }
+}

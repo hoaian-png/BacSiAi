@@ -1,0 +1,39 @@
+{
+  "manifest_version": "1.1",
+  "description": "Manifest ghi nhận lượt duyệt đề xuất bằng AI cho 20 câu ưu tiên đợt 1 (BacSiAi) - Đã chuẩn hóa câu 10, 14, 15",
+  "reviewer_type": "ai",
+  "reviewer_id": "anti_ai",
+  "generated_at_utc": "2026-11-28T07:59:55.933105+00:00",
+  "generated_at_local": "2026-11-28",
+  "total_records": 20,
+  "status_counts": {
+    "label_proposed": 10,
+    "needs_discussion": 7,
+    "excluded_proposed": 3
+  },
+  "proposed_label_distribution": {
+    "ho_dom": 1,
+    "trieu_chung_mui": 1,
+    "xoang": 1,
+    "hong_amidan": 2,
+    "trieu_chung_tai": 1,
+    "cam_lanh": 1,
+    "cam_cum": 1,
+    "sot": 2
+  },
+  "reference_files_checksums": {
+    "questions_pilot.csv": "d6c8d6819e457cc4b1d22d9f151f0c375dee5235e91863786dc755e85452f7a8",
+    "questions_pilot.jsonl": "398f113739b8e795a64e1098a4edab59b4f071ab79f3259e0e432dd3e2069d2d",
+    "sampling_manifest.json": "ecf8ffd87f13b19ba3d041edc9e9f3ec41c2ae1bfbd7898918a36da6f2c20981",
+    "review_batch_01.json": "e605a1013df1ec642a67aaf7c6b79923d46949ebb5b1f1cc8ed9f7f9ec58bb40"
+  },
+  "output_files": {
+    "csv": "batch_01_ai_review.csv",
+    "jsonl": "batch_01_ai_review.jsonl",
+    "sha256_checksums": {
+      "batch_01_ai_review.csv": "ffe715553c77cdc7262c52162b056b3b88dcc4711b71c5c0911c0de2b09d8d62",
+      "batch_01_ai_review.jsonl": "37242dfe0ee65d8c32502636a377815f75aab70b9ebb2171466d81eb85bf4b4c"
+    }
+  },
+  "note": "Đây là kết quả đề xuất sơ bộ bằng AI nhằm hỗ trợ đối chiếu, KHÔNG phải nhãn chuẩn của người dùng hay chuyên gia y tế, không dùng để đánh giá chất lượng mô hình."
+}

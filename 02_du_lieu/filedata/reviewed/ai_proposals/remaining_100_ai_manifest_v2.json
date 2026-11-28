@@ -1,0 +1,98 @@
+{
+  "proposal_batch_id": "remaining_100_ai_proposals_v2",
+  "description": "De xuat AI phien ban v2 cho 100 cau hoi con lai cua tap pilot ngoai batch 01.",
+  "version": "v2",
+  "total_questions": 100,
+  "generated_at": "2026-11-28",
+  "changes_from_v1": [
+    {
+      "id": "ViHealthQA:train:3916",
+      "field_changes": {
+        "needs_clarification": "Doi tu False sang True",
+        "clarification_question": "Bo sung cau hoi lam ro thong tin chung hay truong hop cu the da co chi dinh",
+        "uncertainty_note": "Chua ro cau hoi chung hay can thiep cu the, khong ket luan co the hoac khong the phau thuat"
+      },
+      "reason": "Yeu cau hoi lai khi can quyet dinh can thiep ca nhan hoac chua ro chung/ca nhan, doc lap voi nhan xoang"
+    },
+    {
+      "id": "ViMQ:validation:833",
+      "field_changes": {
+        "proposed_review_status": "Doi tu needs_discussion sang label_proposed",
+        "proposed_topic_label": "Doi tu '' sang xoang",
+        "rationale": "Nguoi hoi truc tiep dat nghi van ve viem xoang nen trong tam la xoang theo HUONG_DAN_GAN_NHAN.md"
+      },
+      "reason": "Chon chu de theo trong tam nghi van, khong ep nhan thanh ket luan lam sang"
+    }
+  ],
+  "status_distribution": {
+    "excluded_proposed": 15,
+    "label_proposed": 51,
+    "needs_discussion": 34
+  },
+  "proposed_label_distribution": {
+    "trieu_chung_tai": 10,
+    "ho_dom": 6,
+    "hong_amidan": 8,
+    "xoang": 7,
+    "sot": 1,
+    "cam_lanh": 7,
+    "trieu_chung_mui": 7,
+    "cam_cum": 5
+  },
+  "needs_clarification_count": 3,
+  "checksums": {
+    "remaining_100_ai_review_v2.jsonl": "ea64e258517498f54007e3788dca20d18d56b7accde705b0a8cc6c5ff89ffd17",
+    "remaining_100_ai_review_v2.csv": "8ed12f6dbd80b4f765d54593e32eea63a0c2f598385974988724ef27fa3a331e"
+  },
+  "traceability": {
+    "reference_base_path": "02_du_lieu/filedata",
+    "path_convention_note": "Tat ca duong dan tham chieu duoc tinh tu goc 02_du_lieu/filedata.",
+    "batch_boundary_note": "Tap pilot (120 cau) va review_batch_01 (20 cau) xac dinh dung 100 ID nam ngoai batch 20 cau.",
+    "version_comparison_note": "Bo remaining_100 khong co hau to v2 la phien ban truoc (v1) dung de doi chieu thay doi.",
+    "reference_files": [
+      {
+        "role": "pilot_questions_csv",
+        "description": "Tep CSV pilot goc dung xac dinh danh sach 120 cau pilot tham chieu.",
+        "path": "reviewed/pilot/questions_pilot.csv",
+        "sha256": "d6c8d6819e457cc4b1d22d9f151f0c375dee5235e91863786dc755e85452f7a8"
+      },
+      {
+        "role": "pilot_questions_jsonl",
+        "description": "Tep JSONL pilot goc dung xac dinh danh sach 120 cau pilot tham chieu.",
+        "path": "reviewed/pilot/questions_pilot.jsonl",
+        "sha256": "398f113739b8e795a64e1098a4edab59b4f071ab79f3259e0e432dd3e2069d2d"
+      },
+      {
+        "role": "pilot_sampling_manifest",
+        "description": "Manifest lay mau pilot goc chua metadata 120 cau pilot.",
+        "path": "reviewed/pilot/sampling_manifest.json",
+        "sha256": "ecf8ffd87f13b19ba3d041edc9e9f3ec41c2ae1bfbd7898918a36da6f2c20981"
+      },
+      {
+        "role": "batch_01_priority_questions",
+        "description": "Danh sach 20 cau uu tien dot 1; ket hop voi pilot de xac dinh dung 100 ID nam ngoai batch 20 cau.",
+        "path": "reviewed/working/review_batch_01.json",
+        "sha256": "e605a1013df1ec642a67aaf7c6b79923d46949ebb5b1f1cc8ed9f7f9ec58bb40"
+      },
+      {
+        "role": "v1_comparison_csv",
+        "description": "Ban de xuat AI CSV phien ban v1 (truoc) dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review.csv",
+        "sha256": "daed662083280395a83d2d62e4f4d59673cce4f4192352352a9b7d16be580115"
+      },
+      {
+        "role": "v1_comparison_jsonl",
+        "description": "Ban de xuat AI JSONL phien ban v1 (truoc) dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review.jsonl",
+        "sha256": "253a455bb2a8c8d8a47965bed0905383cc57598b829384b2ac95f8edfb181b3e"
+      },
+      {
+        "role": "v1_comparison_manifest",
+        "description": "Manifest phien ban v1 dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_manifest.json",
+        "sha256": "fd7e5569338f796c4dd119fdef82dc0d7b97d8e3d227ae85c5a84424ba4724ab"
+      }
+    ]
+  },
+  "metadata_updated_at": "2026-11-28"
+}

@@ -1,0 +1,200 @@
+{
+  "batch_id": "review_batch_01",
+  "description": "Danh sách ưu tiên 20 câu duyệt thử đợt 1 để người dùng trực tiếp gán nhãn thủ công",
+  "total_questions": 20,
+  "distribution_summary": {
+    "dataset_counts": {
+      "ViHealthQA": 6,
+      "ViMQ": 8,
+      "ViMedAQA": 6
+    },
+    "suggested_topic_counts": {
+      "ho_dom": 1,
+      "trieu_chung_mui": 1,
+      "xoang": 5,
+      "hong_amidan": 1,
+      "trieu_chung_tai": 1,
+      "cam_lanh": 1,
+      "cam_cum": 1,
+      "sot": 2,
+      "unlabeled_empty": 7
+    },
+    "special_criteria_covered": [
+      "Đủ 8 chủ đề gợi ý khởi đầu",
+      "Đủ 3 nguồn dữ liệu ViMQ, ViHealthQA, ViMedAQA",
+      "Câu không có nhãn gợi ý (unlabeled_empty)",
+      "Câu đa triệu chứng / nhiều chủ đề",
+      "Ngữ cảnh phủ định triệu chứng",
+      "Ngữ cảnh tiền sử bệnh",
+      "Từ đồng âm khác nghĩa / cấu trúc ngoài TMH (xoang hang, xoang xích ma)",
+      "Kiểm tra ranh giới phạm vi chuyên khoa TMH và cách sử dụng trạng thái duyệt"
+    ]
+  },
+  "reference_pilot_checksums": {
+    "questions_pilot.csv": "d6c8d6819e457cc4b1d22d9f151f0c375dee5235e91863786dc755e85452f7a8",
+    "questions_pilot.jsonl": "398f113739b8e795a64e1098a4edab59b4f071ab79f3259e0e432dd3e2069d2d",
+    "sampling_manifest.json": "ecf8ffd87f13b19ba3d041edc9e9f3ec41c2ae1bfbd7898918a36da6f2c20981"
+  },
+  "questions": [
+    {
+      "order": 1,
+      "id": "ViHealthQA:test:454",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "ho_dom",
+      "question": "Ho ra máu là dấu hiệu của bệnh gì?",
+      "selection_rationale": "Kiểm tra cách nhận diện triệu chứng ho khi đi kèm tính chất bất thường (ho ra máu)."
+    },
+    {
+      "order": 2,
+      "id": "ViMQ:train:1459",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "trieu_chung_mui",
+      "question": "Tại sao thường xuyên chảy máu mũi?",
+      "selection_rationale": "Kiểm tra cách nhận diện triệu chứng xuất huyết vùng mũi (chảy máu mũi / chảy máu cam)."
+    },
+    {
+      "order": 3,
+      "id": "ViMedAQA:train:disease_13292",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "xoang",
+      "question": "Điều quan trọng cần làm để phòng ngừa viêm xoang là gì?",
+      "selection_rationale": "Kiểm tra cách gán nhãn cho câu hỏi về phòng ngừa bệnh lý xoang."
+    },
+    {
+      "order": 4,
+      "id": "ViHealthQA:train:3338",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "hong_amidan",
+      "question": "Có nên cắt viêm amidan không?",
+      "selection_rationale": "Kiểm tra cách gán nhãn cho câu hỏi về chỉ định can thiệp thủ thuật vùng họng/amidan."
+    },
+    {
+      "order": 5,
+      "id": "ViMQ:train:1239",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "trieu_chung_tai",
+      "question": "Trẻ 1 tuổi bị viêm tai giữa phải làm sao?",
+      "selection_rationale": "Kiểm tra cách gán nhãn cho câu hỏi về triệu chứng và xử trí bệnh lý vùng tai ở trẻ nhỏ."
+    },
+    {
+      "order": 6,
+      "id": "ViMQ:train:6945",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "cam_lanh",
+      "question": "Làm thế nào để phân biệt cảm lạnh do thời tiết hay mắc các bệnh về đường hô hấp?",
+      "selection_rationale": "Kiểm tra cách xử lý câu hỏi phân biệt cảm lạnh với các bệnh đường hô hấp."
+    },
+    {
+      "order": 7,
+      "id": "ViMQ:test:151",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "cam_cum",
+      "question": "Bệnh cúm thường kéo dài bao lâu?",
+      "selection_rationale": "Kiểm tra cách gán nhãn cho câu hỏi về diễn tiến thời gian của bệnh cúm."
+    },
+    {
+      "order": 8,
+      "id": "ViHealthQA:train:5674",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "sot",
+      "question": "Thường xuyên bị sốt phải điều trị như thế nào?",
+      "selection_rationale": "Kiểm tra cách gán nhãn cho triệu chứng sốt tái diễn đơn thuần."
+    },
+    {
+      "order": 9,
+      "id": "ViHealthQA:test:1492",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "xoang",
+      "question": "Rò rỉ nhẹ động mạch xoang hang có nguy hiểm không?",
+      "selection_rationale": "Kiểm tra cách nhận diện từ đồng âm y khoa ngoài chuyên khoa TMH ('xoang hang' là cấu trúc giải phẫu mạch máu sọ não)."
+    },
+    {
+      "order": 10,
+      "id": "ViMedAQA:train:body-part_4327",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "xoang",
+      "question": "Rãnh nào nằm ở giữa rãnh nhị thân và rãnh xoang xích ma?",
+      "selection_rationale": "Kiểm tra cách nhận diện từ đồng âm trong giải phẫu xương sọ ('xoang xích ma') và tránh ưu tiên từ khóa máy móc."
+    },
+    {
+      "order": 11,
+      "id": "ViMQ:train:4065",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "xoang",
+      "question": "Viêm xoang kèm chảy mủ ở tai báo là dấu hiệu bệnh gì?",
+      "selection_rationale": "Kiểm tra cách xử lý câu hỏi xuất hiện đồng thời nhiều cơ quan/triệu chứng (xoang và tai) theo quy tắc xác định trọng tâm hoặc đánh dấu thảo luận."
+    },
+    {
+      "order": 12,
+      "id": "ViMQ:train:5732",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "xoang",
+      "question": "Người có tiền sử viêm xoang bị đau đầu và đau gáy nên điều trị thế nào?",
+      "selection_rationale": "Kiểm tra cách phân biệt thông tin tiền sử bệnh ('tiền sử viêm xoang') với nội dung/triệu chứng đang được hỏi hiện tại."
+    },
+    {
+      "order": 13,
+      "id": "ViMQ:train:2618",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "",
+      "question": "Bé không ho hay ngạt mũi nhưng bị sốt có sao không?",
+      "selection_rationale": "Kiểm tra cách xử lý cấu trúc câu có ngữ cảnh phủ định triệu chứng ('không ho hay ngạt mũi') và xác định trọng tâm câu hỏi."
+    },
+    {
+      "order": 14,
+      "id": "ViMQ:test:239",
+      "dataset": "ViMQ",
+      "suggested_topic_label": "",
+      "question": "Trẻ sốt cao, đau đầu, viêm họng cấp nhưng không đau họng là bị làm sao?",
+      "selection_rationale": "Kiểm tra cách xử lý cấu trúc câu có ngữ cảnh phủ định / mâu thuẫn triệu chứng ('nhưng không đau họng') và câu chưa có nhãn gợi ý."
+    },
+    {
+      "order": 15,
+      "id": "ViMedAQA:train:disease_1587",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "",
+      "question": "Bệnh cúm khác cảm lạnh ở những điểm nào?",
+      "selection_rationale": "Kiểm tra cách xử lý câu hỏi so sánh giữa hai bệnh lý hô hấp thường gặp và câu chưa có nhãn gợi ý."
+    },
+    {
+      "order": 16,
+      "id": "ViMedAQA:validation:disease_2616",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "",
+      "question": "Ho kéo dài liên quan chảy dịch mũi sau có thể cải thiện khi sử dụng loại thuốc nào?",
+      "selection_rationale": "Kiểm tra cách phân định trọng tâm khi câu hỏi kết hợp nhiều cơ chế triệu chứng (ho kéo dài kèm chảy dịch mũi sau) trong trường hợp chưa có nhãn gợi ý."
+    },
+    {
+      "order": 17,
+      "id": "ViHealthQA:train:1052",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "",
+      "question": "Đau họng kèm có đờm có phải viêm amidan không?",
+      "selection_rationale": "Kiểm tra cách phân định trọng tâm giữa triệu chứng vùng họng và tính chất đờm khi chưa có nhãn gợi ý."
+    },
+    {
+      "order": 18,
+      "id": "ViHealthQA:train:1216",
+      "dataset": "ViHealthQA",
+      "suggested_topic_label": "",
+      "question": "Cách đây 3 hôm, tôi bị cảm lạnh và viêm họng nên đã uống thuốc để điều trị. Tôi hết các triệu chứng đau người nên dừng thuốc. Tuy nhiên, do họng vẫn viêm nên tôi có sử dụng viên ngậm hàng ngày. Theo lịch ngày mai tôi thực hiện tiêm vaccine Covid-19, như vậy tôi có tiêm được không hay phải hoãn. (Hiện tại họng tôi vẫn đang hơi có cảm giác đau rát).",
+      "selection_rationale": "Kiểm tra cách bóc tách nội dung câu hỏi chính trong đoạn mô tả dài chứa thông tin tiền sử bệnh."
+    },
+    {
+      "order": 19,
+      "id": "ViMedAQA:train:disease_12172",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "sot",
+      "question": "Có phải tất cả các trường hợp bị ung thư ống mật đều gây sốt?",
+      "selection_rationale": "Kiểm tra cách xử lý triệu chứng sốt xuất hiện trong bệnh cảnh chuyên khoa khác (gan mật) so với phạm vi hô hấp/TMH."
+    },
+    {
+      "order": 20,
+      "id": "ViMedAQA:train:body-part_2016",
+      "dataset": "ViMedAQA",
+      "suggested_topic_label": "",
+      "question": "Đặc điểm cấu tạo của mao mạch không liên tục là gì?",
+      "selection_rationale": "Kiểm tra ranh giới phạm vi chuyên khoa TMH và cách sử dụng các trạng thái duyệt đối với câu hỏi giải phẫu học cơ thể chung."
+    }
+  ]
+}

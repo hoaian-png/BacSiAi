@@ -1,0 +1,185 @@
+{
+  "proposal_batch_id": "remaining_100_ai_proposals_v3",
+  "description": "De xuat AI phien ban v3 cho 100 cau hoi con lai cua tap pilot ngoai batch 01 sau khi ra soat trong tam va tieu chi loai tru.",
+  "version": "v3",
+  "total_questions": 100,
+  "generated_at": "2026-11-28",
+  "metadata_updated_at": "2026-11-28",
+  "traceability": {
+    "reference_base_path": "02_du_lieu/filedata",
+    "path_convention_note": "Tat ca duong dan tham chieu duoc tinh tu goc 02_du_lieu/filedata.",
+    "batch_boundary_note": "Tap pilot (120 cau) va review_batch_01 (20 cau) xac dinh dung 100 ID nam ngoai batch 20 cau.",
+    "version_comparison_note": "Bo remaining_100 co hau to v2 la phien ban truoc dung de doi chieu thay doi voi v3.",
+    "reference_files": [
+      {
+        "role": "pilot_questions_csv",
+        "description": "Tep CSV pilot goc dung xac dinh danh sach 120 cau pilot tham chieu.",
+        "path": "reviewed/pilot/questions_pilot.csv",
+        "sha256": "d6c8d6819e457cc4b1d22d9f151f0c375dee5235e91863786dc755e85452f7a8"
+      },
+      {
+        "role": "pilot_questions_jsonl",
+        "description": "Tep JSONL pilot goc dung xac dinh danh sach 120 cau pilot tham chieu.",
+        "path": "reviewed/pilot/questions_pilot.jsonl",
+        "sha256": "398f113739b8e795a64e1098a4edab59b4f071ab79f3259e0e432dd3e2069d2d"
+      },
+      {
+        "role": "pilot_sampling_manifest",
+        "description": "Manifest lay mau pilot goc chua metadata 120 cau pilot.",
+        "path": "reviewed/pilot/sampling_manifest.json",
+        "sha256": "ecf8ffd87f13b19ba3d041edc9e9f3ec41c2ae1bfbd7898918a36da6f2c20981"
+      },
+      {
+        "role": "batch_01_priority_questions",
+        "description": "Danh sach 20 cau uu tien dot 1; ket hop voi pilot de xac dinh dung 100 ID nam ngoai batch 20 cau.",
+        "path": "reviewed/working/review_batch_01.json",
+        "sha256": "e605a1013df1ec642a67aaf7c6b79923d46949ebb5b1f1cc8ed9f7f9ec58bb40"
+      },
+      {
+        "role": "v2_comparison_csv",
+        "description": "Ban de xuat AI CSV phien ban v2 (truoc do) dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review_v2.csv",
+        "sha256": "8ed12f6dbd80b4f765d54593e32eea63a0c2f598385974988724ef27fa3a331e"
+      },
+      {
+        "role": "v2_comparison_jsonl",
+        "description": "Ban de xuat AI JSONL phien ban v2 (truoc do) dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review_v2.jsonl",
+        "sha256": "ea64e258517498f54007e3788dca20d18d56b7accde705b0a8cc6c5ff89ffd17"
+      },
+      {
+        "role": "v2_comparison_manifest",
+        "description": "Manifest phien ban v2 dung de doi chieu thay doi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_manifest_v2.json",
+        "sha256": "a9b1a646990b4535fb763b4484b8b0c048a2e1bdc5178ed7c1e7ba05f7a291a3"
+      }
+    ]
+  },
+  "changes_from_v2": [
+    {
+      "id": "ViHealthQA:train:114",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là hạn chế tiêm vắc-xin Covid-19 AstraZeneca trên người nhiều bệnh nền; viêm mũi dị ứng chỉ là bệnh nền/tiền sử."
+    },
+    {
+      "id": "ViHealthQA:train:2120",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là điều kiện tiêm vắc-xin Covid-19 trên người có cơ địa dị ứng; viêm xoang chỉ là bệnh nền."
+    },
+    {
+      "id": "ViHealthQA:train:2322",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là chích ngừa vắc-xin Covid-19; viêm xoang và viêm mũi dị ứng là bệnh nền/tiền căn."
+    },
+    {
+      "id": "ViHealthQA:train:2593",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là tiêm vắc-xin Covid-19; dị ứng thuốc cảm cúm là tiền sử phản ứng thuốc."
+    },
+    {
+      "id": "ViHealthQA:train:2986",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là tiêm vắc-xin Covid-19 cho phụ nữ cho con bú có bệnh nền toàn thân; viêm xoang chỉ là chi tiết phụ."
+    },
+    {
+      "id": "ViHealthQA:train:4273",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là tiêm vắc-xin Covid-19; viêm xoang mạn và ho ra máu là bệnh lý/triệu chứng nền."
+    },
+    {
+      "id": "ViHealthQA:train:4743",
+      "change": "Doi tu needs_discussion sang label_proposed (cam_cum)",
+      "reason": "Trọng tâm hỏi trực tiếp về việc có nên tiếp tục tiêm vắc-xin phòng bệnh cúm mùa hàng năm hay không."
+    },
+    {
+      "id": "ViHealthQA:train:5283",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là tiêm vắc-xin Covid-19 AstraZeneca trên người có nhiều bệnh nền toàn thân; viêm mũi mạn tính chỉ là một bệnh nền."
+    },
+    {
+      "id": "ViHealthQA:train:610",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là quy trình tư vấn tiêm chủng vắc-xin Covid-19 khi có tiền sử dị ứng thuốc cảm sốt, viêm xoang."
+    },
+    {
+      "id": "ViHealthQA:train:891",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là điều kiện tiêm vắc-xin Covid-19; viêm mũi dị ứng hơn 20 năm là bệnh nền."
+    },
+    {
+      "id": "ViHealthQA:validation:547",
+      "change": "Doi tu needs_discussion sang label_proposed (cam_cum)",
+      "reason": "Trọng tâm hỏi về khoảng thời gian cần thiết để được tiêm vắc-xin phòng bệnh cảm cúm."
+    },
+    {
+      "id": "ViHealthQA:validation:624",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Trọng tâm hỏi là lựa chọn địa điểm tiêm vắc-xin Covid-19 an toàn; tiền sử tiêm cúm chỉ là dữ liệu so sánh."
+    },
+    {
+      "id": "ViHealthQA:validation:883",
+      "change": "Doi tu needs_discussion sang label_proposed (xoang)",
+      "reason": "Viêm xoang trán là thể bệnh viêm xoang cạnh mũi rõ rệt; hỗ trợ truy xuất thêm nhóm mũi dị ứng."
+    },
+    {
+      "id": "ViMQ:train:2966",
+      "change": "Doi tu needs_discussion sang label_proposed (hong_amidan)",
+      "reason": "Cả cảm giác nuốt vướng ở cổ và đờm mủ trong họng đều định khu tại vùng hầu họng miệng."
+    },
+    {
+      "id": "ViMQ:train:5053",
+      "change": "Doi tu needs_discussion sang label_proposed (hong_amidan)",
+      "reason": "Triệu chứng phàn nàn chính cần xử trí là ngứa cổ họng; paracetamol hạ sốt chỉ là thuốc uống trước đó."
+    },
+    {
+      "id": "ViMQ:train:6507",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Căn nguyên chính là bệnh lý hệ tiết niệu (tiểu rặn nghi nhiễm trùng tiểu) ngoài TMH; sốt là triệu chứng phụ toàn thân."
+    },
+    {
+      "id": "ViMQ:train:897",
+      "change": "Doi tu needs_discussion sang label_proposed (ho_dom)",
+      "reason": "Trọng tâm câu hỏi cần tìm cách điều trị là giảm ho; viêm xoang là bệnh lý nền gây ra ho."
+    },
+    {
+      "id": "ViMQ:validation:111",
+      "change": "Doi tu needs_discussion sang excluded_proposed",
+      "reason": "Nghi ngờ bệnh sởi - bệnh truyền nhiễm toàn thân phát ban sau sốt ở trẻ em, ngoài phạm vi TMH."
+    },
+    {
+      "id": "ViMedAQA:train:disease_12760",
+      "change": "Doi tu needs_discussion sang label_proposed (hong_amidan)",
+      "reason": "Bệnh lý chính xác định việc kê đơn điều trị là viêm họng do liên cầu khuẩn; giảm đau hạ sốt là mục đích điều trị triệu chứng."
+    },
+    {
+      "id": "ViMedAQA:train:disease_2757",
+      "change": "Doi tu needs_discussion sang label_proposed (hong_amidan)",
+      "reason": "Tình huống tai nạn dị vật họng miệng (hóc xương cá); ho khạc chỉ là phản xạ sai cần tránh."
+    },
+    {
+      "id": "ViMedAQA:train:medicine_1807",
+      "change": "Doi tu needs_discussion sang label_proposed (ho_dom)",
+      "reason": "Trọng tâm câu hỏi là phương pháp dùng cà na để điều trị triệu chứng ho (ho do cảm lạnh)."
+    }
+  ],
+  "status_distribution": {
+    "excluded_proposed": 27,
+    "label_proposed": 60,
+    "needs_discussion": 13
+  },
+  "proposed_label_distribution": {
+    "trieu_chung_tai": 10,
+    "ho_dom": 8,
+    "hong_amidan": 12,
+    "xoang": 8,
+    "cam_cum": 7,
+    "sot": 1,
+    "cam_lanh": 7,
+    "trieu_chung_mui": 7
+  },
+  "needs_clarification_count": 3,
+  "checksums": {
+    "remaining_100_ai_review_v3.jsonl": "7300ece8ae58d4c76240b6c4b269b4bedf5e82a17337c33be9210775b0fb2e91",
+    "remaining_100_ai_review_v3.csv": "a9d4a9cf5f55016de562448ae73700367d8bb2c6b3b6d024b9660204df49a4de"
+  }
+}

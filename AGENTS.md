@@ -46,10 +46,30 @@ Tài liệu này hướng dẫn người phát triển và trợ lý lập trìn
 ## Hỏi đáp và LLM
 
 - Nhãn chủ đề nói câu hỏi nhắc đến nội dung gì, không phải chẩn đoán.
-- Không yêu cầu người dùng phải biết tên bệnh mới được đặt câu hỏi.
-- Không tự từ chối mọi câu có nhiều triệu chứng; hỗ trợ đọc ngữ cảnh hoặc hỏi lại.
+- Hiểu cách hỏi của người bình thường (yêu cầu thiết kế đã chốt):
+  + Người dùng có thể không biết thuật ngữ y khoa; chấp nhận câu kể triệu chứng, cách nói đời thường, lỗi chính tả, viết tắt và từ đồng nghĩa.
+  + Không bắt người dùng phải biết tên bệnh hoặc tự chọn nhãn trước khi đặt câu hỏi.
+  + Giữ đúng cấu trúc phủ định, tiền sử, mốc thời gian và triệu chứng thực tế được mô tả; không suy ra chẩn đoán chỉ từ từ khóa.
+  + Trả lời bằng ngôn từ dễ hiểu; nếu bắt buộc dùng thuật ngữ y khoa thì giải thích ngắn gọn, rõ ràng.
+- Yêu cầu truy xuất đa chủ đề và đa bộ dữ liệu (yêu cầu thiết kế đã chốt, chưa triển khai mã nguồn):
+  + Đối với câu hỏi so sánh hoặc liên quan hai hay nhiều chủ đề (ví dụ so sánh cúm và cảm lạnh), hệ thống phải tìm kiếm nội dung phù hợp từ tất cả các chủ đề cần thiết.
+  + Có thể kết hợp kiến thức từ hai hoặc cả ba bộ dữ liệu (ViMQ, ViHealthQA, ViMedAQA) nếu có nội dung phù hợp đã được phê duyệt.
+  + Lọc theo nội dung thực sự liên quan, điều kiện áp dụng và ngữ cảnh; loại bỏ thông tin trùng lặp trong câu trả lời nhưng giữ nguyên truy vết nguồn.
+  + Không giới hạn việc tìm kiếm vào một chủ đề hoặc một bộ dữ liệu chỉ vì mô hình phân loại trả về một nhãn; không bắt buộc phải dùng đủ nhiều bộ dữ liệu nếu một nguồn đã đủ trả lời.
+  + Phân biệt rõ: nhóm chủ đề (`cam_cum`, `cam_lanh`...) và bộ dữ liệu nguồn (`ViMQ`, `ViHealthQA`, `ViMedAQA`). Hai chủ đề có thể nằm trong cùng một bộ dữ liệu; một chủ đề có thể xuất hiện ở nhiều bộ dữ liệu.
+  + Tách biệt bài toán phân loại khỏi truy xuất hỏi đáp: yêu cầu kết hợp nhiều nguồn khi trả lời không đồng nghĩa phải đổi năm mô hình phân loại thành đa nhãn (năm mô hình vẫn giữ bài toán đơn nhãn khi train).
+- Hỏi lại khi cần quyết định can thiệp hoặc thiếu ngữ cảnh (yêu cầu thiết kế đã chốt):
+  + Đối với câu hỏi cá nhân về chỉ định can thiệp (ví dụ “tôi có cần phẫu thuật / cắt / mổ không”), tuyệt đối không kết luận ngay có hoặc không.
+  + Hỏi ngắn gọn những thông tin còn thiếu liên quan trực tiếp đến quyết định (triệu chứng kéo dài bao lâu, mức độ ảnh hưởng, kết quả khám hoặc chỉ định của bác sĩ khám trực tiếp); không hỏi lại thông tin người dùng đã cung cấp.
+  + Nếu câu hỏi chỉ hỏi kiến thức y khoa chung về phương pháp phẫu thuật/thủ thuật thì giải thích kiến thức chung từ nguồn đã duyệt.
+  + Không loại câu hỏi khỏi dữ liệu chỉ vì có từ phẫu thuật hoặc có nhiều triệu chứng.
+  + Nhãn chủ đề và quyết định cần hỏi bổ sung là hai trường thông tin riêng biệt (ví dụ câu 04 về cắt amidan giữ nguyên nhãn `hong_amidan`, việc hỏi lại do tầng hội thoại đảm nhiệm).
 - Chỉ đưa nội dung đã được chấp thuận vào kho trả lời chính thức; dữ liệu chưa duyệt chỉ xem ở phần nghiên cứu/duyệt dữ liệu.
-- Giữ nguồn, điều kiện áp dụng và phủ định khi diễn đạt lại. Thiếu nguồn phù hợp thì hỏi bổ sung hoặc thông báo chưa đủ thông tin.
+- Vai trò LLM:
+  + LLM chỉ tổng hợp và diễn đạt nội dung đã tìm được từ kho tri thức đã duyệt.
+  + Giữ nguồn của từng thông tin, giữ điều kiện áp dụng, phủ định và các điểm khác biệt.
+  + Không tự suy diễn nguyên nhân, chẩn đoán hoặc thêm kiến thức ngoài nội dung được duyệt.
+  + Nếu các nguồn mâu thuẫn, phải nêu điểm chưa thống nhất; không tự ghép thành một kết luận chắc chắn. Thiếu nguồn phù hợp thì hỏi bổ sung hoặc thông báo chưa đủ thông tin.
 - Tách lịch sử hiển thị khỏi trạng thái hội thoại; không mặc định lưu nội dung sức khỏe vào cơ sở dữ liệu hoặc log.
 
 ## Kiểm tra và bàn giao

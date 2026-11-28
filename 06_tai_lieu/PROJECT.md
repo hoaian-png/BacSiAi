@@ -70,10 +70,25 @@ Không chạy cả năm mô hình trên mọi câu hỏi. Train cả năm để 
 ## Truy xuất và vai trò LLM
 
 - Dùng câu hỏi đầy đủ, từ khóa và chủ đề để tìm tài liệu; không chỉ tra một đáp án cố định theo tên bệnh.
-- Chủ đề là tín hiệu ưu tiên, không phải bộ lọc cứng duy nhất. Mô hình phân loại có thể sai hoặc câu hỏi có nhiều triệu chứng.
-- Chỉ đưa các mục kiến thức đã được duyệt vào chỉ mục trả lời chính thức.
-- LLM được phép nối ý, sắp xếp đoạn và diễn đạt dễ hiểu. Không yêu cầu nó tự quyết định chẩn đoán, lựa chọn thuốc hoặc thêm thông tin ngoài nguồn.
-- Giữ điều kiện áp dụng, phủ định và nguồn. Không ghép nội dung của các tình huống mâu thuẫn thành một khuyến nghị chung.
+- Chủ đề là tín hiệu ưu tiên, không phải bộ lọc cứng duy nhất. Mô hình phân loại có thể sai hoặc câu hỏi có nhiều triệu chứng/nhiều chủ đề.
+- **Hiểu cách hỏi đời thường của người dùng (thiết kế đã chốt):**
+  + Chấp nhận câu kể triệu chứng dân dã, lỗi chính tả, viết tắt và từ đồng nghĩa; không bắt người dùng biết tên bệnh hay chọn nhãn.
+  + Giữ đúng phủ định, tiền sử, triệu chứng mô tả; giải thích thuật ngữ y khoa nếu bắt buộc dùng.
+- **Quy tắc truy xuất kết hợp đa nguồn (thiết kế đã chốt, chưa triển khai mã nguồn):**
+  + Với câu hỏi so sánh hoặc liên quan hai hay nhiều chủ đề (như phân biệt cúm và cảm lạnh), hệ thống tìm kiếm nội dung liên quan từ tất cả các nhóm chủ đề cần thiết (ví dụ cả `cam_cum` và `cam_lanh`) rồi tổng hợp thành câu trả lời so sánh dễ hiểu.
+  + Không bắt người dùng chọn duy nhất một trong hai nhóm mới được trả lời.
+  + Có thể kết hợp kiến thức từ hai hoặc cả ba bộ dữ liệu nguồn (`ViMQ`, `ViHealthQA`, `ViMedAQA`) nếu có nội dung phù hợp đã được phê duyệt; không bắt buộc phải dùng đủ nhiều bộ dữ liệu nếu một nguồn đã đủ căn cứ trả lời.
+  + Lọc nội dung thực sự liên quan và điều kiện áp dụng; loại bỏ trùng lặp trong câu trả lời nhưng giữ liên kết nguồn.
+  + Phân biệt rõ: `cam_cum`, `cam_lanh`... là các nhóm chủ đề; `ViMQ`, `ViHealthQA`, `ViMedAQA` là các bộ dữ liệu nguồn. Hai chủ đề có thể cùng xuất hiện trong một bộ dữ liệu; một chủ đề có thể có mặt ở nhiều bộ dữ liệu khác nhau.
+  + Tách rời bài toán phân loại train khỏi truy xuất: việc kết hợp nhiều nguồn khi hỏi đáp không yêu cầu chuyển năm mô hình phân loại thành mô hình đa nhãn (vẫn duy trì bài toán đơn nhãn khi train).
+- **Hỏi lại khi cần quyết định can thiệp hoặc thiếu ngữ cảnh (thiết kế đã chốt):**
+  + Với câu hỏi cá nhân về can thiệp (ví dụ “tôi có cần cắt/mổ không”), không kết luận ngay có/không; hỏi ngắn gọn thông tin còn thiếu (thời gian, mức độ, chỉ định bác sĩ khám); không hỏi lại thông tin đã nêu.
+  + Không loại câu hỏi khỏi dữ liệu chỉ vì có từ phẫu thuật. Nhãn chủ đề và quyết định hỏi lại là hai thông tin độc lập.
+- Chỉ đưa các mục kiến thức đã được duyệt vào chỉ mục trả lời chính thức; dữ liệu chưa duyệt không được dùng làm kiến thức chính thức.
+- **Vai trò LLM:**
+  + LLM chỉ đóng vai trò tổng hợp và diễn đạt lại nội dung đã tìm được từ kho tri thức được duyệt; không tự suy diễn nguyên nhân, chẩn đoán, lựa chọn thuốc hoặc bịa đặt kiến thức ngoài nguồn.
+  + Giữ nguyên nguồn tham chiếu cho từng thông tin, giữ điều kiện áp dụng, phủ định và các điểm khác biệt so sánh.
+  + Nếu các nguồn mâu thuẫn, phải nêu rõ điểm chưa thống nhất; không tự ghép thành một kết luận chắc chắn.
 - Nếu không tìm thấy nội dung phù hợp: hỏi thêm hoặc thông báo chưa có thông tin. Nếu Ollama không chạy: có thể hiển thị nội dung nguồn đã duyệt.
 - Chọn mô hình Ollama sau khi kiểm tra RAM/GPU; tên mô hình chưa được chốt.
 

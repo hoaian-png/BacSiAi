@@ -1,6 +1,6 @@
 # Lộ trình triển khai BacSiAi
 
-Tài liệu cập nhật **27/11/2026**. Dấu `[x]` chỉ việc đã có bằng chứng trong dự án, không đánh dấu hoàn thành theo dự định. Đợt hiện tại chỉ bổ sung tài liệu trên máy, chưa đưa lên Git.
+Tài liệu cập nhật **28/11/2026**. Dấu `[x]` chỉ việc đã có bằng chứng trong dự án, không đánh dấu hoàn thành theo dự định. Đợt hiện tại chỉ bổ sung tài liệu trên máy, chưa đưa lên Git.
 
 ## Giai đoạn 0 — Chuẩn bị dữ liệu và thiết kế
 
@@ -14,24 +14,24 @@ Tài liệu cập nhật **27/11/2026**. Dấu `[x]` chỉ việc đã có bằn
 - [x] Viết bộ tài liệu hướng dẫn, kiến trúc và quy ước tại thư mục máy.
 - [x] Sắp xếp file vào 7 nhóm theo nội dung đồ án, cập nhật đường dẫn mã và tài liệu; chưa stage, commit hoặc push thay đổi này.
 
-**Chưa hoàn thành:** nhãn chuẩn, phê duyệt kiến thức, train mô hình và ứng dụng.
+**Chưa hoàn thành:** mở rộng nhãn chuẩn ngoài 70 câu pilot đã được chấp thuận, xử lý 17 câu thảo luận, phê duyệt kiến thức, train mô hình và ứng dụng.
 
 ## Giai đoạn 1 — Chốt nhãn và duyệt dữ liệu
 
 ### Việc cần làm
 
-- [ ] Viết hướng dẫn gán nhãn chủ đề; phân biệt với ý định và thực thể.
-- [ ] Gán thử một tập nhỏ phủ các chủ đề và câu mơ hồ, thống nhất cách xử lý bất đồng.
-- [ ] Kiểm tra tám nhãn khởi đầu và điều chỉnh trước khi gán toàn bộ.
-- [ ] Duyệt câu hỏi, điền gold_topic_label; lưu riêng khỏi file sinh tự động.
-- [ ] Xử lý câu nhiều triệu chứng, phủ định, tiền sử, lỗi chính tả, ngoài phạm vi và câu chưa rõ.
-- [ ] Kiểm tra mẫu còn chứa thông tin nhận dạng cá nhân.
+- [x] Viết hướng dẫn gán nhãn chủ đề; phân biệt với ý định và thực thể (đã có HUONG_DAN_GAN_NHAN.md v1.1).
+- [x] Gán thử một tập nhỏ phủ các chủ đề và câu mơ hồ, thống nhất cách xử lý bất đồng (đã ghi quyết định xử lý cho tập Pilot 120 câu tại `02_du_lieu/filedata/reviewed/annotations/v4_user_accepted_20261128/`: 70 reviewed có nhãn, 33 excluded, 17 needs_discussion).
+- [x] Kiểm tra tám nhãn khởi đầu và điều chỉnh trước khi gán toàn bộ.
+- [x] Xử lý câu nhiều triệu chứng, phủ định, tiền sử, lỗi chính tả, ngoài phạm vi và câu chưa rõ (đã chuẩn hóa quy tắc truy xuất đa chủ đề và hỏi bổ sung).
+- [ ] Mở rộng gán nhãn cho tập dữ liệu lớn từ kho `prepared` để đạt đủ cỡ mẫu cho huấn luyện 5 mô hình (hiện 70 câu pilot reviewed chưa đủ để train/so sánh).
+- [ ] Kiểm tra mẫu còn chứa thông tin nhận dạng cá nhân trên tập mở rộng.
 - [ ] Rà soát kiến thức, nguồn và điều kiện áp dụng; chỉ duyệt nội dung đủ căn cứ.
-- [ ] Thống kê số mẫu được duyệt theo nhãn và nguồn.
+- [ ] Thống kê số mẫu được duyệt theo nhãn và nguồn trên tập mở rộng.
 
 ### Điều kiện hoàn thành
 
-Có tập câu hỏi đã duyệt, hướng dẫn gán nhãn có phiên bản và kho kiến thức được đánh dấu chấp thuận riêng. Không đặt mục tiêu số mẫu bằng cách tự sinh nhãn chuẩn hoặc đánh dấu duyệt hàng loạt mà không đọc.
+Có tập câu hỏi đã duyệt, hướng dẫn gán nhãn có phiên bản và kho kiến thức được đánh dấu chấp thuận riêng. Tập dữ liệu sau gán nhãn mở rộng phải đủ mẫu trên từng lớp để chia train/validation/test công bằng. Lưu ý: 70 câu pilot đã duyệt là kết quả người dùng chấp thuận đề xuất AI về chủ đề câu hỏi, không phải chuyên gia y tế xác minh nội dung y khoa, và chưa đủ điều kiện bắt đầu train.
 
 ## Giai đoạn 2 — Chuẩn bị thí nghiệm
 
@@ -91,10 +91,15 @@ Truy xuất trả về ID, nội dung, nguồn và mức phù hợp; có luồng
 
 - [ ] Nạp một mô hình phân loại đã chọn, không train lại trong mỗi lượt hỏi.
 - [ ] Chuẩn hóa câu và từ khóa, giữ ngữ cảnh phủ định/câu hỏi giả định.
+- [ ] Thiết kế cơ chế truy xuất đa chủ đề và đa bộ dữ liệu (yêu cầu đã chốt):
+  + Hỗ trợ tìm kiếm từ tất cả chủ đề cần thiết đối với câu hỏi so sánh hoặc nhiều chủ đề (như phân biệt cúm và cảm lạnh).
+  + Cho phép kết hợp kiến thức được duyệt từ hai hoặc cả ba bộ dữ liệu nguồn (ViMQ, ViHealthQA, ViMedAQA); không bắt buộc phải dùng nhiều nguồn nếu một nguồn đã đủ.
+  + Không giới hạn việc tìm kiếm vào một chủ đề duy nhất chỉ vì mô hình phân loại dự đoán một nhãn.
+  + Tách rời bài toán phân loại train (đơn nhãn) khỏi truy xuất hỏi đáp (kết hợp linh hoạt).
 - [ ] Lưu trạng thái câu hỏi đang chờ bổ sung trong phiên.
 - [ ] Kết nối Ollama với mô hình phù hợp cấu hình máy.
-- [ ] Giới hạn đầu vào LLM vào câu hỏi và nội dung được tìm thấy.
-- [ ] Kiểm thử đầu ra giữ nguồn, điều kiện áp dụng, không thêm chẩn đoán hoặc thuốc ngoài nội dung nguồn.
+- [ ] Giới hạn đầu vào LLM vào câu hỏi và nội dung được tìm thấy; LLM chỉ tổng hợp và diễn đạt lại nội dung có nguồn.
+- [ ] Kiểm thử đầu ra giữ nguồn, điều kiện áp dụng, phủ định, điểm khác biệt; không thêm chẩn đoán, nguyên nhân hoặc thuốc ngoài nội dung nguồn; nêu rõ điểm mâu thuẫn giữa các nguồn nếu có.
 - [ ] Có phương án hiển thị nội dung gốc khi LLM không hoạt động hoặc đầu ra không phù hợp.
 
 ### Điều kiện hoàn thành
@@ -129,3 +134,11 @@ Luồng có nội dung phù hợp, thiếu thông tin, không có nguồn, lỗi
 **Chốt hướng dẫn gán nhãn → duyệt dữ liệu → khóa tập đánh giá → train bốn mô hình truyền thống → PhoBERT → truy xuất/SQLite → LLM diễn đạt → hoàn thiện Streamlit.**
 
 Có thể xây màn hình duyệt dữ liệu sớm nếu người dùng yêu cầu để hỗ trợ bước gán nhãn. Không tự bắt đầu lập trình chỉ vì một mục trong lộ trình đang chưa hoàn thành.
+
+## Bước kế tiếp sau pilot đã có quyết định
+
+- [x] Kiểm tra bundle `v4_user_accepted_20261128`: 70 reviewed, 33 excluded, 17 needs_discussion, 0 pending; `annotation_complete = False`.
+- [x] Kiểm kê ứng viên mới sau loại ID/group_id pilot và lập phương án đợt 200 câu: xem [báo cáo kiểm kê](../05_bao_cao/kiem_tra_du_lieu/TONG_KET_DUYET_THU_DOT_01.md).
+- [ ] Chốt quota và lấy mẫu đợt mở rộng; chưa thực hiện.
+- [ ] Duyệt nhãn đợt mở rộng và kiểm tra độc lập chất lượng nhãn.
+- [ ] Duyệt kiến thức trước khi xây kho trả lời; 1.814 mục hiện chưa được chấp thuận.

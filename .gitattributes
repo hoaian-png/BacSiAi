@@ -2,4 +2,8 @@
 
 # Preserve upstream file bytes so sources.json checksums remain valid.
 02_du_lieu/filedata/raw/** -text
+# Prepared inputs are referenced by reviewed sampling manifests.
+02_du_lieu/filedata/prepared/** -text
+# Reviewed snapshots and manifests use byte-level SHA-256 references.
+02_du_lieu/filedata/reviewed/** -text
 *.parquet binary

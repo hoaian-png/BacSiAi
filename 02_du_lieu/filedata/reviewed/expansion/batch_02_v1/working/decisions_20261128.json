@@ -1,0 +1,162 @@
+{
+  "decision_date": "2026-11-28",
+  "reviewer_id": "hoai_an",
+  "source_instruction": "Các câu mổ bỏ đi; câu hỏi về đơn thuốc thảo dược thì không duyệt; câu 144 và 145 lấy một câu.",
+  "scope": "expansion/batch_02_v1 only",
+  "source_csv_sha256": "8c7f6a7a16631ae0ca39ee1c86477d114021af3e92fc586de4b2e6f1d03b1a27",
+  "decisions": [
+    {
+      "order": 14,
+      "id": "ViHealthQA:test:907",
+      "status": "excluded",
+      "label": "",
+      "note": "Người duyệt yêu cầu loại câu hỏi về quyết định/phương pháp phẫu thuật trong đợt mở rộng."
+    },
+    {
+      "order": 48,
+      "id": "ViHealthQA:train:5089",
+      "status": "excluded",
+      "label": "",
+      "note": "Người duyệt yêu cầu loại câu hỏi về quyết định/phương pháp phẫu thuật trong đợt mở rộng."
+    },
+    {
+      "order": 59,
+      "id": "ViHealthQA:train:6865",
+      "status": "excluded",
+      "label": "",
+      "note": "Người duyệt yêu cầu loại câu hỏi về quyết định/phương pháp phẫu thuật trong đợt mở rộng."
+    },
+    {
+      "order": 63,
+      "id": "ViHealthQA:validation:279",
+      "status": "excluded",
+      "label": "",
+      "note": "Người duyệt yêu cầu loại câu hỏi về quyết định/phương pháp phẫu thuật trong đợt mở rộng."
+    },
+    {
+      "order": 144,
+      "id": "ViMedAQA:train:body-part_3049",
+      "status": "reviewed",
+      "label": "trieu_chung_tai",
+      "note": "Người duyệt cho phép chọn một trong hai câu trùng ý 144/145; giữ câu 144 về chức năng vòi nhĩ, chủ đề tai."
+    },
+    {
+      "order": 145,
+      "id": "ViMedAQA:train:body-part_4872",
+      "status": "excluded",
+      "label": "",
+      "note": "Người duyệt chọn giữ câu 144; loại câu 145 vì cùng nội dung hỏi chức năng vòi nhĩ."
+    }
+  ],
+  "not_approved_herbal_or_folk_questions": [
+    {
+      "order": 77,
+      "id": "ViMQ:train:1673"
+    },
+    {
+      "order": 171,
+      "id": "ViMedAQA:train:medicine_10011"
+    },
+    {
+      "order": 172,
+      "id": "ViMedAQA:train:medicine_10383"
+    },
+    {
+      "order": 173,
+      "id": "ViMedAQA:train:medicine_11347"
+    },
+    {
+      "order": 174,
+      "id": "ViMedAQA:train:medicine_11492"
+    },
+    {
+      "order": 175,
+      "id": "ViMedAQA:train:medicine_1204"
+    },
+    {
+      "order": 176,
+      "id": "ViMedAQA:train:medicine_12349"
+    },
+    {
+      "order": 177,
+      "id": "ViMedAQA:train:medicine_13216"
+    },
+    {
+      "order": 178,
+      "id": "ViMedAQA:train:medicine_13448"
+    },
+    {
+      "order": 179,
+      "id": "ViMedAQA:train:medicine_13637"
+    },
+    {
+      "order": 180,
+      "id": "ViMedAQA:train:medicine_2249"
+    },
+    {
+      "order": 181,
+      "id": "ViMedAQA:train:medicine_2985"
+    },
+    {
+      "order": 182,
+      "id": "ViMedAQA:train:medicine_3082"
+    },
+    {
+      "order": 183,
+      "id": "ViMedAQA:train:medicine_5447"
+    },
+    {
+      "order": 184,
+      "id": "ViMedAQA:train:medicine_5762"
+    },
+    {
+      "order": 185,
+      "id": "ViMedAQA:train:medicine_5892"
+    },
+    {
+      "order": 186,
+      "id": "ViMedAQA:train:medicine_6080"
+    },
+    {
+      "order": 187,
+      "id": "ViMedAQA:train:medicine_7034"
+    },
+    {
+      "order": 188,
+      "id": "ViMedAQA:train:medicine_7334"
+    },
+    {
+      "order": 189,
+      "id": "ViMedAQA:train:medicine_771"
+    },
+    {
+      "order": 190,
+      "id": "ViMedAQA:train:medicine_8896"
+    },
+    {
+      "order": 191,
+      "id": "ViMedAQA:train:medicine_9081"
+    },
+    {
+      "order": 192,
+      "id": "ViMedAQA:train:medicine_9353"
+    },
+    {
+      "order": 193,
+      "id": "ViMedAQA:train:medicine_997"
+    },
+    {
+      "order": 199,
+      "id": "ViMedAQA:validation:medicine_12495"
+    },
+    {
+      "order": 200,
+      "id": "ViMedAQA:validation:medicine_9426"
+    }
+  ],
+  "status_counts": {
+    "pending_manual_review": 194,
+    "excluded": 5,
+    "reviewed": 1
+  }
+}

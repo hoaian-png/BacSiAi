@@ -1,0 +1,174 @@
+{
+  "proposal_batch_id": "remaining_100_ai_proposals_v4",
+  "description": "Đề xuất AI phiên bản v4 cho 100 câu hỏi còn lại của tập pilot ngoài batch 01 sau khi tinh chỉnh toàn diện theo chỉ đạo của người duyệt.",
+  "version": "v4",
+  "total_questions": 100,
+  "generated_at": "2026-11-28",
+  "metadata_updated_at": "2026-11-28",
+  "traceability": {
+    "reference_base_path": "02_du_lieu/filedata",
+    "path_convention_note": "Tất cả đường dẫn tham chiếu được tính từ gốc 02_du_lieu/filedata.",
+    "batch_boundary_note": "Tập pilot (120 câu) và review_batch_01 (20 câu) xác định đúng 100 ID nằm ngoài batch 20 câu.",
+    "version_comparison_note": "Bộ remaining_100 có hậu tố v3 là phiên bản trước dùng để đối chiếu thay đổi với v4.",
+    "reference_files": [
+      {
+        "role": "pilot_questions_csv",
+        "description": "Tệp CSV pilot gốc dùng xác định danh sách 120 câu pilot tham chiếu.",
+        "path": "reviewed/pilot/questions_pilot.csv",
+        "sha256": "d6c8d6819e457cc4b1d22d9f151f0c375dee5235e91863786dc755e85452f7a8"
+      },
+      {
+        "role": "pilot_questions_jsonl",
+        "description": "Tệp JSONL pilot gốc dùng xác định danh sách 120 câu pilot tham chiếu.",
+        "path": "reviewed/pilot/questions_pilot.jsonl",
+        "sha256": "398f113739b8e795a64e1098a4edab59b4f071ab79f3259e0e432dd3e2069d2d"
+      },
+      {
+        "role": "pilot_sampling_manifest",
+        "description": "Manifest lấy mẫu pilot gốc chứa metadata 120 câu pilot.",
+        "path": "reviewed/pilot/sampling_manifest.json",
+        "sha256": "ecf8ffd87f13b19ba3d041edc9e9f3ec41c2ae1bfbd7898918a36da6f2c20981"
+      },
+      {
+        "role": "batch_01_priority_questions",
+        "description": "Danh sách 20 câu ưu tiên đợt 1; kết hợp với pilot để xác định đúng 100 ID nằm ngoài batch 20 câu.",
+        "path": "reviewed/working/review_batch_01.json",
+        "sha256": "e605a1013df1ec642a67aaf7c6b79923d46949ebb5b1f1cc8ed9f7f9ec58bb40"
+      },
+      {
+        "role": "v3_comparison_csv",
+        "description": "Bản đề xuất AI CSV phiên bản v3 (trước đó) dùng để đối chiếu thay đổi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review_v3.csv",
+        "sha256": "a9d4a9cf5f55016de562448ae73700367d8bb2c6b3b6d024b9660204df49a4de"
+      },
+      {
+        "role": "v3_comparison_jsonl",
+        "description": "Bản đề xuất AI JSONL phiên bản v3 (trước đó) dùng để đối chiếu thay đổi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_review_v3.jsonl",
+        "sha256": "7300ece8ae58d4c76240b6c4b269b4bedf5e82a17337c33be9210775b0fb2e91"
+      },
+      {
+        "role": "v3_comparison_manifest",
+        "description": "Manifest phiên bản v3 dùng để đối chiếu thay đổi.",
+        "path": "reviewed/ai_proposals/remaining_100_ai_manifest_v3.json",
+        "sha256": "621a221005e08716374cee38198a9477663698fb1c4f8e9ca2cebb5cf5cd105f"
+      }
+    ]
+  },
+  "changes_from_v3": [
+    {
+      "order": 15,
+      "id": "ViHealthQA:train:4743",
+      "change": "Đổi từ label_proposed (cam_cum) sang needs_discussion (nhãn đề xuất trống), đặt needs_clarification = True",
+      "reason": "Đọc đầy đủ câu gốc thấy có hai yêu cầu (tiêm vaccine COVID-19 và tiếp tục tiêm cúm mùa); không mặc định yêu cầu cuối là duy nhất; thêm câu hỏi bổ sung làm rõ nhu cầu."
+    },
+    {
+      "order": 27,
+      "id": "ViHealthQA:validation:883",
+      "change": "Đổi từ label_proposed (xoang) sang needs_discussion (nhãn đề xuất trống)",
+      "reason": "Cả hai vấn đề viêm xoang trán và viêm mũi dị ứng đều được đề cập ngang hàng, chưa có căn cứ rõ để ưu tiên một nhóm; giữ related_topics gồm xoang và trieu_chung_mui."
+    },
+    {
+      "order": 51,
+      "id": "ViMQ:train:6507",
+      "change": "Đổi từ excluded_proposed sang needs_discussion (nhãn đề xuất trống)",
+      "reason": "Bỏ nhận định căn nguyên chính và suy diễn nhiễm trùng tiểu; câu hỏi có sốt và khó khăn khi đi tiểu, chưa có quy tắc đủ rõ để chọn nhãn sot hay loại theo phạm vi."
+    },
+    {
+      "order": 52,
+      "id": "ViMQ:train:897",
+      "change": "Giữ label_proposed (ho_dom) và điều chỉnh lý do",
+      "reason": "Mục tiêu người hỏi là giảm ho, viêm xoang là bối cảnh liên quan; bỏ khẳng định viêm xoang gây ra ho; giữ cả ho_dom và xoang trong chủ đề liên quan để hỗ trợ hỏi đáp đa nhóm."
+    },
+    {
+      "order": 28,
+      "id": "ViMQ:test:225",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Diễn đạt trung tính mối liên hệ được hỏi giữa lao hạch và ho khan; không suy ra quan hệ nguyên nhân."
+    },
+    {
+      "order": 49,
+      "id": "ViMQ:train:5582",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Bỏ suy diễn xì mũi ra máu là biểu hiện xuất tiết do viêm xoang; giữ chủ đề và triệu chứng được nêu."
+    },
+    {
+      "order": 53,
+      "id": "ViMQ:validation:111",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Mô tả đúng nghi vấn về bệnh sởi và các triệu chứng trong câu gốc, không xác nhận chẩn đoán."
+    },
+    {
+      "order": 56,
+      "id": "ViMedAQA:test:disease_13320",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Diễn đạt đúng câu hỏi về nguyên nhân phổ biến, không tự thêm mức độ ưu tiên."
+    },
+    {
+      "order": 62,
+      "id": "ViMedAQA:train:disease_12274",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Giữ bối cảnh viêm amidan cấp và áp-xe được câu hỏi đề cập, không bổ sung quan hệ nguyên nhân."
+    },
+    {
+      "order": 69,
+      "id": "ViMedAQA:train:disease_13312",
+      "change": "Chỉ cập nhật rationale; giữ nguyên nhãn, trạng thái và nguyên văn câu hỏi.",
+      "reason": "Bỏ điều kiện có biến chứng không được nêu trong câu hỏi gốc."
+    }
+  ],
+  "statistics": {
+    "proposed_review_status_counts": {
+      "excluded_proposed": 26,
+      "label_proposed": 58,
+      "needs_discussion": 16
+    },
+    "label_proposed_by_topic": {
+      "trieu_chung_tai": 10,
+      "ho_dom": 8,
+      "hong_amidan": 12,
+      "xoang": 7,
+      "sot": 1,
+      "cam_lanh": 7,
+      "cam_cum": 6,
+      "trieu_chung_mui": 7
+    },
+    "needs_clarification_count": 4,
+    "clarification_questions_items": [
+      {
+        "order": 9,
+        "id": "ViHealthQA:train:2976",
+        "clarification_question": "Bạn đã được bác sĩ chuyên khoa Tai Mũi Họng khám trực tiếp và đưa ra chỉ định cắt amidan cụ thể nào chưa?"
+      },
+      {
+        "order": 11,
+        "id": "ViHealthQA:train:3916",
+        "clarification_question": "Bạn đang hỏi thông tin chung hay cho một người cụ thể? Nếu là trường hợp cụ thể, bác sĩ đã khám và đề nghị phẫu thuật chưa?"
+      },
+      {
+        "order": 12,
+        "id": "ViHealthQA:train:4208",
+        "clarification_question": "Triệu chứng nghẹt mũi hay nuốt vướng gây khó chịu nhiều nhất cho bạn và tình trạng này đã kéo dài bao lâu?"
+      },
+      {
+        "order": 15,
+        "id": "ViHealthQA:train:4743",
+        "clarification_question": "Bạn muốn tìm hiểu cả việc tiêm vaccine COVID-19 và tiêm cúm mùa, hay ưu tiên một vấn đề?"
+      }
+    ]
+  },
+  "output_files": [
+    {
+      "path": "reviewed/ai_proposals/remaining_100_ai_review_v4.jsonl",
+      "sha256": "cb54104135b698916988a938c6115b5c779237b8f1f05dba254bcda6f11a25d2",
+      "size_bytes": 90715,
+      "record_count": 100
+    },
+    {
+      "path": "reviewed/ai_proposals/remaining_100_ai_review_v4.csv",
+      "sha256": "983570f7242304719da7ff42fba9a188d51d9224d379cf31cae34c254d70ec64",
+      "size_bytes": 61987,
+      "record_count": 100
+    }
+  ]
+}

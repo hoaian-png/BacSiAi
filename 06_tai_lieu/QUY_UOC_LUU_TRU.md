@@ -59,6 +59,8 @@ Những file này **chưa được tạo**. Bản câu hỏi nên giữ ID gốc
 
 Trạng thái đề xuất: `pending_manual_review`, `reviewed`, `needs_discussion`, `excluded`. Không tự suy ra reviewed từ việc ô nhãn không trống. Câu ngoài phạm vi hoặc không rõ cần được xử lý theo hướng dẫn gán nhãn đã chốt.
 
+*Lưu ý về quan hệ giữa nhãn train và truy xuất hỏi đáp:* Nhãn `gold_topic_label` là nhãn mục tiêu cho bài toán phân loại đơn nhãn của mô hình train. Đối với các câu hỏi đa chủ đề hoặc so sánh (như phân biệt cúm và cảm lạnh), khi chưa chốt nhãn phân loại đơn nhãn thì câu có thể giữ trạng thái `needs_discussion` (nhãn chuẩn để trống và chưa đưa vào tập train); điều này không ngăn cản việc hệ thống hỏi đáp sau này truy xuất kết hợp từ nhiều nhóm chủ đề hoặc nhiều bộ dữ liệu nguồn để trả lời người dùng.
+
 Kiến thức cần giữ bản nguồn và phần nội dung chấp thuận riêng nếu có biên tập; ghi lý do, người duyệt và thời điểm. Chỉ bật `approved_for_rag` khi nội dung và nguồn đã được kiểm tra. Bản đã chỉnh không được giả làm nguyên văn nguồn.
 
 ## 6. Phiên bản và cách chia tập
